@@ -1,0 +1,113 @@
+pipeline:
+  ingest:
+    enabled: true
+    validate_inputs: true
+    extract_metadata: true
+    organize_files: true
+  preprocessing:
+    enabled: true
+    normalize_framerate: true
+    resize_video: true
+    generate_proxies: true
+    extract_frames: true
+    audio_normalization: true
+  speaker_detection:
+    enabled: true
+    face_detection: true
+    face_tracking: true
+    speaker_identification: true
+    lip_movement_detection: true
+    motion_detection: true
+    podcast_visual_enhancement: true
+    draw_speaker_border: true
+
+paths:
+  raw_dir: "raw"
+  processed_dir: "processed"
+  proxies_dir: "proxies"
+  frames_dir: "frames"
+  logs_dir: "logs"
+  outputs_dir: "outputs"
+
+ingest:
+  accepted_video_ext: [".mp4", ".mkv", ".mov", ".avi"]
+  accepted_audio_ext: [".wav", ".mp3", ".aac", ".m4a"]
+  accepted_overlay_ext: [".png", ".jpg", ".jpeg", ".webp", ".mov", ".mp4"]
+  strict_ffmpeg_validation: true
+
+video:
+  target_fps: 30
+  output_resolution:
+    width: 1280
+    height: 720
+  codec: "auto"
+  crf: 20
+  preset: "medium"
+  bitrate: "5M"
+
+proxy:
+  enabled: true
+  width: 640
+  height: 360
+  fps: 15
+  suffix: "_proxy"
+  codec: "auto"
+  crf: 28
+  preset: "veryfast"
+  bitrate: "2M"
+
+frame_extraction:
+  interval: 10
+  image_format: "jpg"
+  quality: 95
+
+audio:
+  normalize_filter: "loudnorm=I=-16:LRA=11:TP=-1.5"
+  codec: "aac"
+  bitrate: "192k"
+
+speaker_detection:
+  detector_backend: "mediapipe"  # mediapipe | opencv_dnn
+  detection_confidence: 0.5
+  dnn_prototxt: ""
+  dnn_model: ""
+  tracking_max_disappeared: 30
+  tracking_max_distance: 180
+  activity_smoothing_alpha: 0.25
+  min_activity_threshold: 0.1
+  use_face_mesh_for_lips: true
+  min_face_size: 32
+
+production_edits:
+  enabled: true
+  white_balance: true
+  clahe: true
+  denoise: true
+  sharpen: true
+  clahe_clip_limit: 2.0
+  clahe_tile_grid_size: 8
+  denoise_strength: 5
+  sharpen_amount: 1.2
+  sharpen_sigma: 1.2
+
+speaker_outline:
+  enabled: true
+  outline_all_speakers: true
+  color:
+    r: 255
+    g: 255
+    b: 255
+  thickness: 7
+  active_thickness_boost: 2
+  shadow_thickness: 2
+  shadow_color:
+    r: 0
+    g: 0
+    b: 0
+  expand_x: 1.4
+  expand_top: 0.35
+  expand_bottom: 3.0
+  min_area: 1200
+  max_roi_height: 320
+  smoothing_eps: 0.008
+

@@ -1,0 +1,898 @@
+2026-05-17 22:51:13 | WARNING | podcast_pipeline | MediaPipe installed without solutions API. Falling back to Haar cascade detector.
+2026-05-17 22:51:13 | INFO | podcast_pipeline | Face detector initialized: haar
+2026-05-17 22:51:13 | WARNING | podcast_pipeline | MediaPipe FaceMesh unavailable. Using ROI-based lip movement fallback.
+2026-05-17 22:51:13 | INFO | podcast_pipeline | Starting ingest pipeline.
+2026-05-17 22:51:38 | INFO | podcast_pipeline | Validated video asset: /Users/niserg/Desktop/metaverse/podcast_pipeline/input/20260403_recording.mp4
+2026-05-17 22:51:38 | INFO | podcast_pipeline | Metadata for 20260403_recording.mp4: {'fps': 25.0, 'resolution': {'width': 1512, 'height': 950}, 'codec': 'h264', 'duration_sec': 2862.64, 'frame_count': 71566}
+2026-05-17 22:51:38 | INFO | podcast_pipeline | Organized video -> /Users/niserg/Desktop/metaverse/podcast_pipeline/raw/video/20260403_recording.mp4
+2026-05-17 22:51:38 | INFO | podcast_pipeline | Ingest complete: 1 videos, 0 audio, 0 overlays.
+2026-05-17 22:53:24 | INFO | podcast_pipeline | Using FFmpeg video encoder: h264_videotoolbox
+2026-05-17 22:53:24 | INFO | podcast_pipeline | Using FFmpeg video encoder: h264_videotoolbox
+2026-05-17 22:53:24 | WARNING | podcast_pipeline | MediaPipe installed without solutions API. Falling back to Haar cascade detector.
+2026-05-17 22:53:24 | INFO | podcast_pipeline | Face detector initialized: haar
+2026-05-17 22:53:24 | WARNING | podcast_pipeline | MediaPipe FaceMesh unavailable. Using ROI-based lip movement fallback.
+2026-05-17 22:53:24 | INFO | podcast_pipeline | Starting ingest pipeline.
+2026-05-17 22:53:31 | INFO | podcast_pipeline | Validated video asset: /Users/niserg/Desktop/metaverse/podcast_pipeline/input/20260403_recording.mp4
+2026-05-17 22:53:31 | INFO | podcast_pipeline | Metadata for 20260403_recording.mp4: {'fps': 25.0, 'resolution': {'width': 1512, 'height': 950}, 'codec': 'h264', 'duration_sec': 2862.64, 'frame_count': 71566}
+2026-05-17 22:53:31 | INFO | podcast_pipeline | Organized video -> /Users/niserg/Desktop/metaverse/podcast_pipeline/raw/video/20260403_recording.mp4
+2026-05-17 22:53:31 | INFO | podcast_pipeline | Ingest complete: 1 videos, 0 audio, 0 overlays.
+2026-05-17 22:57:55 | INFO | podcast_pipeline | Normalized FPS: 20260403_recording.mp4 -> 20260403_recording_fps.mp4
+2026-05-17 23:00:59 | INFO | podcast_pipeline | Resized video: 20260403_recording_fps.mp4 -> 20260403_recording_resized.mp4
+2026-05-17 23:02:27 | INFO | podcast_pipeline | Normalized audio: 20260403_recording_resized.mp4 -> 20260403_recording_audio_norm.mp4
+2026-05-17 23:03:01 | INFO | podcast_pipeline | Generated proxy: 20260403_recording_proxy.mp4
+2026-05-17 23:03:57 | INFO | podcast_pipeline | Extracted 8588 frames from 20260403_recording_audio_norm.mp4
+2026-05-17 23:03:57 | INFO | podcast_pipeline | Preprocessing complete. Processed=1, Proxies=1
+2026-05-17 23:03:59 | INFO | podcast_pipeline | Speaker detection processed 150 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:04:01 | INFO | podcast_pipeline | Speaker detection processed 300 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:04:03 | INFO | podcast_pipeline | Speaker detection processed 450 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:04:05 | INFO | podcast_pipeline | Speaker detection processed 600 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:04:07 | INFO | podcast_pipeline | Speaker detection processed 750 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:04:09 | INFO | podcast_pipeline | Speaker detection processed 900 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:04:11 | INFO | podcast_pipeline | Speaker detection processed 1050 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:04:13 | INFO | podcast_pipeline | Speaker detection processed 1200 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:04:15 | INFO | podcast_pipeline | Speaker detection processed 1350 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:04:17 | INFO | podcast_pipeline | Speaker detection processed 1500 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:04:19 | INFO | podcast_pipeline | Speaker detection processed 1650 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:04:21 | INFO | podcast_pipeline | Speaker detection processed 1800 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:04:23 | INFO | podcast_pipeline | Speaker detection processed 1950 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:04:24 | INFO | podcast_pipeline | Speaker detection processed 2100 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:04:26 | INFO | podcast_pipeline | Speaker detection processed 2250 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:04:28 | INFO | podcast_pipeline | Speaker detection processed 2400 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:04:30 | INFO | podcast_pipeline | Speaker detection processed 2550 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:04:32 | INFO | podcast_pipeline | Speaker detection processed 2700 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:04:34 | INFO | podcast_pipeline | Speaker detection processed 2850 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:04:36 | INFO | podcast_pipeline | Speaker detection processed 3000 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:04:38 | INFO | podcast_pipeline | Speaker detection processed 3150 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:04:40 | INFO | podcast_pipeline | Speaker detection processed 3300 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:04:41 | INFO | podcast_pipeline | Speaker detection processed 3450 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:04:43 | INFO | podcast_pipeline | Speaker detection processed 3600 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:04:45 | INFO | podcast_pipeline | Speaker detection processed 3750 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:04:47 | INFO | podcast_pipeline | Speaker detection processed 3900 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:04:49 | INFO | podcast_pipeline | Speaker detection processed 4050 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:04:51 | INFO | podcast_pipeline | Speaker detection processed 4200 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:04:53 | INFO | podcast_pipeline | Speaker detection processed 4350 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:04:55 | INFO | podcast_pipeline | Speaker detection processed 4500 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:04:57 | INFO | podcast_pipeline | Speaker detection processed 4650 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:04:59 | INFO | podcast_pipeline | Speaker detection processed 4800 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:05:01 | INFO | podcast_pipeline | Speaker detection processed 4950 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:05:02 | INFO | podcast_pipeline | Speaker detection processed 5100 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:05:04 | INFO | podcast_pipeline | Speaker detection processed 5250 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:05:06 | INFO | podcast_pipeline | Speaker detection processed 5400 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:05:08 | INFO | podcast_pipeline | Speaker detection processed 5550 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:05:10 | INFO | podcast_pipeline | Speaker detection processed 5700 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:05:12 | INFO | podcast_pipeline | Speaker detection processed 5850 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:05:14 | INFO | podcast_pipeline | Speaker detection processed 6000 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:05:16 | INFO | podcast_pipeline | Speaker detection processed 6150 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:05:17 | INFO | podcast_pipeline | Speaker detection processed 6300 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:05:19 | INFO | podcast_pipeline | Speaker detection processed 6450 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:05:21 | INFO | podcast_pipeline | Speaker detection processed 6600 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:05:23 | INFO | podcast_pipeline | Speaker detection processed 6750 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:05:25 | INFO | podcast_pipeline | Speaker detection processed 6900 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:05:27 | INFO | podcast_pipeline | Speaker detection processed 7050 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:05:29 | INFO | podcast_pipeline | Speaker detection processed 7200 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:05:31 | INFO | podcast_pipeline | Speaker detection processed 7350 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:05:32 | INFO | podcast_pipeline | Speaker detection processed 7500 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:05:34 | INFO | podcast_pipeline | Speaker detection processed 7650 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:05:36 | INFO | podcast_pipeline | Speaker detection processed 7800 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:05:38 | INFO | podcast_pipeline | Speaker detection processed 7950 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:05:40 | INFO | podcast_pipeline | Speaker detection processed 8100 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:05:42 | INFO | podcast_pipeline | Speaker detection processed 8250 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:05:44 | INFO | podcast_pipeline | Speaker detection processed 8400 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:05:46 | INFO | podcast_pipeline | Speaker detection processed 8550 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:05:48 | INFO | podcast_pipeline | Speaker detection processed 8700 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:05:50 | INFO | podcast_pipeline | Speaker detection processed 8850 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:05:51 | INFO | podcast_pipeline | Speaker detection processed 9000 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:05:53 | INFO | podcast_pipeline | Speaker detection processed 9150 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:05:55 | INFO | podcast_pipeline | Speaker detection processed 9300 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:05:57 | INFO | podcast_pipeline | Speaker detection processed 9450 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:05:59 | INFO | podcast_pipeline | Speaker detection processed 9600 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:06:01 | INFO | podcast_pipeline | Speaker detection processed 9750 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:06:03 | INFO | podcast_pipeline | Speaker detection processed 9900 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:06:05 | INFO | podcast_pipeline | Speaker detection processed 10050 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:06:07 | INFO | podcast_pipeline | Speaker detection processed 10200 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:06:08 | INFO | podcast_pipeline | Speaker detection processed 10350 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:06:10 | INFO | podcast_pipeline | Speaker detection processed 10500 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:06:12 | INFO | podcast_pipeline | Speaker detection processed 10650 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:06:14 | INFO | podcast_pipeline | Speaker detection processed 10800 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:06:16 | INFO | podcast_pipeline | Speaker detection processed 10950 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:06:18 | INFO | podcast_pipeline | Speaker detection processed 11100 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:06:20 | INFO | podcast_pipeline | Speaker detection processed 11250 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:06:21 | INFO | podcast_pipeline | Speaker detection processed 11400 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:06:23 | INFO | podcast_pipeline | Speaker detection processed 11550 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:06:25 | INFO | podcast_pipeline | Speaker detection processed 11700 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:06:27 | INFO | podcast_pipeline | Speaker detection processed 11850 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:06:29 | INFO | podcast_pipeline | Speaker detection processed 12000 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:06:31 | INFO | podcast_pipeline | Speaker detection processed 12150 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:06:33 | INFO | podcast_pipeline | Speaker detection processed 12300 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:06:35 | INFO | podcast_pipeline | Speaker detection processed 12450 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:06:37 | INFO | podcast_pipeline | Speaker detection processed 12600 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:06:39 | INFO | podcast_pipeline | Speaker detection processed 12750 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:06:41 | INFO | podcast_pipeline | Speaker detection processed 12900 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:06:43 | INFO | podcast_pipeline | Speaker detection processed 13050 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:06:45 | INFO | podcast_pipeline | Speaker detection processed 13200 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:06:47 | INFO | podcast_pipeline | Speaker detection processed 13350 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:06:49 | INFO | podcast_pipeline | Speaker detection processed 13500 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:06:50 | INFO | podcast_pipeline | Speaker detection processed 13650 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:06:52 | INFO | podcast_pipeline | Speaker detection processed 13800 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:06:54 | INFO | podcast_pipeline | Speaker detection processed 13950 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:06:56 | INFO | podcast_pipeline | Speaker detection processed 14100 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:06:57 | INFO | podcast_pipeline | Speaker detection processed 14250 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:07:01 | INFO | podcast_pipeline | Speaker detection processed 14400 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:07:04 | INFO | podcast_pipeline | Speaker detection processed 14550 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:07:08 | INFO | podcast_pipeline | Speaker detection processed 14700 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:07:11 | INFO | podcast_pipeline | Speaker detection processed 14850 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:07:15 | INFO | podcast_pipeline | Speaker detection processed 15000 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:07:19 | INFO | podcast_pipeline | Speaker detection processed 15150 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:07:22 | INFO | podcast_pipeline | Speaker detection processed 15300 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:07:26 | INFO | podcast_pipeline | Speaker detection processed 15450 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:07:29 | INFO | podcast_pipeline | Speaker detection processed 15600 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:07:33 | INFO | podcast_pipeline | Speaker detection processed 15750 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:07:36 | INFO | podcast_pipeline | Speaker detection processed 15900 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:07:40 | INFO | podcast_pipeline | Speaker detection processed 16050 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:07:42 | INFO | podcast_pipeline | Speaker detection processed 16200 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:07:44 | INFO | podcast_pipeline | Speaker detection processed 16350 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:07:45 | INFO | podcast_pipeline | Speaker detection processed 16500 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:07:47 | INFO | podcast_pipeline | Speaker detection processed 16650 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:07:49 | INFO | podcast_pipeline | Speaker detection processed 16800 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:07:51 | INFO | podcast_pipeline | Speaker detection processed 16950 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:07:53 | INFO | podcast_pipeline | Speaker detection processed 17100 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:07:54 | INFO | podcast_pipeline | Speaker detection processed 17250 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:07:56 | INFO | podcast_pipeline | Speaker detection processed 17400 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:07:58 | INFO | podcast_pipeline | Speaker detection processed 17550 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:08:00 | INFO | podcast_pipeline | Speaker detection processed 17700 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:08:02 | INFO | podcast_pipeline | Speaker detection processed 17850 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:08:04 | INFO | podcast_pipeline | Speaker detection processed 18000 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:08:05 | INFO | podcast_pipeline | Speaker detection processed 18150 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:08:07 | INFO | podcast_pipeline | Speaker detection processed 18300 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:08:09 | INFO | podcast_pipeline | Speaker detection processed 18450 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:08:11 | INFO | podcast_pipeline | Speaker detection processed 18600 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:08:13 | INFO | podcast_pipeline | Speaker detection processed 18750 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:08:15 | INFO | podcast_pipeline | Speaker detection processed 18900 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:08:16 | INFO | podcast_pipeline | Speaker detection processed 19050 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:08:18 | INFO | podcast_pipeline | Speaker detection processed 19200 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:08:20 | INFO | podcast_pipeline | Speaker detection processed 19350 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:08:22 | INFO | podcast_pipeline | Speaker detection processed 19500 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:08:24 | INFO | podcast_pipeline | Speaker detection processed 19650 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:08:26 | INFO | podcast_pipeline | Speaker detection processed 19800 frames for 20260403_recording_audio_norm.mp4
+2026-05-17 23:09:39 | INFO | podcast_pipeline | Using FFmpeg video encoder: h264_videotoolbox
+2026-05-17 23:09:39 | INFO | podcast_pipeline | Using FFmpeg video encoder: h264_videotoolbox
+2026-05-17 23:09:39 | INFO | podcast_pipeline | Starting ingest pipeline.
+2026-05-17 23:09:47 | INFO | podcast_pipeline | Validated video asset: /Users/niserg/Desktop/metaverse/podcast_pipeline/input/20260403_recording.mp4
+2026-05-17 23:09:47 | INFO | podcast_pipeline | Organized video -> /Users/niserg/Desktop/metaverse/podcast_pipeline/raw/video/20260403_recording.mp4
+2026-05-17 23:09:47 | INFO | podcast_pipeline | Ingest complete: 1 videos, 0 audio, 0 overlays.
+2026-05-17 23:09:47 | INFO | podcast_pipeline | Preprocessing complete. Processed=1, Proxies=0
+2026-05-17 23:09:47 | INFO | podcast_pipeline | Speaker detection processed 150 frames for 20260403_recording.mp4
+2026-05-17 23:09:48 | INFO | podcast_pipeline | Speaker detection processed 300 frames for 20260403_recording.mp4
+2026-05-17 23:09:49 | INFO | podcast_pipeline | Speaker detection processed 450 frames for 20260403_recording.mp4
+2026-05-17 23:09:49 | INFO | podcast_pipeline | Speaker detection processed 600 frames for 20260403_recording.mp4
+2026-05-17 23:09:50 | INFO | podcast_pipeline | Speaker detection processed 750 frames for 20260403_recording.mp4
+2026-05-17 23:09:50 | INFO | podcast_pipeline | Speaker detection processed 900 frames for 20260403_recording.mp4
+2026-05-17 23:09:51 | INFO | podcast_pipeline | Speaker detection processed 1050 frames for 20260403_recording.mp4
+2026-05-17 23:09:51 | INFO | podcast_pipeline | Speaker detection processed 1200 frames for 20260403_recording.mp4
+2026-05-17 23:09:52 | INFO | podcast_pipeline | Speaker detection processed 1350 frames for 20260403_recording.mp4
+2026-05-17 23:09:52 | INFO | podcast_pipeline | Speaker detection processed 1500 frames for 20260403_recording.mp4
+2026-05-17 23:09:53 | INFO | podcast_pipeline | Speaker detection processed 1650 frames for 20260403_recording.mp4
+2026-05-17 23:09:53 | INFO | podcast_pipeline | Speaker detection processed 1800 frames for 20260403_recording.mp4
+2026-05-17 23:09:54 | INFO | podcast_pipeline | Speaker detection processed 1950 frames for 20260403_recording.mp4
+2026-05-17 23:09:54 | INFO | podcast_pipeline | Speaker detection processed 2100 frames for 20260403_recording.mp4
+2026-05-17 23:09:55 | INFO | podcast_pipeline | Speaker detection processed 2250 frames for 20260403_recording.mp4
+2026-05-17 23:09:55 | INFO | podcast_pipeline | Speaker detection processed 2400 frames for 20260403_recording.mp4
+2026-05-17 23:09:56 | INFO | podcast_pipeline | Speaker detection processed 2550 frames for 20260403_recording.mp4
+2026-05-17 23:09:56 | INFO | podcast_pipeline | Speaker detection processed 2700 frames for 20260403_recording.mp4
+2026-05-17 23:09:57 | INFO | podcast_pipeline | Speaker detection processed 2850 frames for 20260403_recording.mp4
+2026-05-17 23:09:57 | INFO | podcast_pipeline | Speaker detection processed 3000 frames for 20260403_recording.mp4
+2026-05-17 23:09:58 | INFO | podcast_pipeline | Speaker detection processed 3150 frames for 20260403_recording.mp4
+2026-05-17 23:09:58 | INFO | podcast_pipeline | Speaker detection processed 3300 frames for 20260403_recording.mp4
+2026-05-17 23:09:59 | INFO | podcast_pipeline | Speaker detection processed 3450 frames for 20260403_recording.mp4
+2026-05-17 23:09:59 | INFO | podcast_pipeline | Speaker detection processed 3600 frames for 20260403_recording.mp4
+2026-05-17 23:10:00 | INFO | podcast_pipeline | Speaker detection processed 3750 frames for 20260403_recording.mp4
+2026-05-17 23:10:00 | INFO | podcast_pipeline | Speaker detection processed 3900 frames for 20260403_recording.mp4
+2026-05-17 23:10:01 | INFO | podcast_pipeline | Speaker detection processed 4050 frames for 20260403_recording.mp4
+2026-05-17 23:10:01 | INFO | podcast_pipeline | Speaker detection processed 4200 frames for 20260403_recording.mp4
+2026-05-17 23:10:02 | INFO | podcast_pipeline | Speaker detection processed 4350 frames for 20260403_recording.mp4
+2026-05-17 23:10:02 | INFO | podcast_pipeline | Speaker detection processed 4500 frames for 20260403_recording.mp4
+2026-05-17 23:10:03 | INFO | podcast_pipeline | Speaker detection processed 4650 frames for 20260403_recording.mp4
+2026-05-17 23:10:03 | INFO | podcast_pipeline | Speaker detection processed 4800 frames for 20260403_recording.mp4
+2026-05-17 23:10:04 | INFO | podcast_pipeline | Speaker detection processed 4950 frames for 20260403_recording.mp4
+2026-05-17 23:10:04 | INFO | podcast_pipeline | Speaker detection processed 5100 frames for 20260403_recording.mp4
+2026-05-17 23:10:05 | INFO | podcast_pipeline | Speaker detection processed 5250 frames for 20260403_recording.mp4
+2026-05-17 23:10:05 | INFO | podcast_pipeline | Speaker detection processed 5400 frames for 20260403_recording.mp4
+2026-05-17 23:10:06 | INFO | podcast_pipeline | Speaker detection processed 5550 frames for 20260403_recording.mp4
+2026-05-17 23:10:06 | INFO | podcast_pipeline | Speaker detection processed 5700 frames for 20260403_recording.mp4
+2026-05-17 23:10:07 | INFO | podcast_pipeline | Speaker detection processed 5850 frames for 20260403_recording.mp4
+2026-05-17 23:10:07 | INFO | podcast_pipeline | Speaker detection processed 6000 frames for 20260403_recording.mp4
+2026-05-17 23:10:08 | INFO | podcast_pipeline | Speaker detection processed 6150 frames for 20260403_recording.mp4
+2026-05-17 23:10:08 | INFO | podcast_pipeline | Speaker detection processed 6300 frames for 20260403_recording.mp4
+2026-05-17 23:10:09 | INFO | podcast_pipeline | Speaker detection processed 6450 frames for 20260403_recording.mp4
+2026-05-17 23:10:09 | INFO | podcast_pipeline | Speaker detection processed 6600 frames for 20260403_recording.mp4
+2026-05-17 23:10:10 | INFO | podcast_pipeline | Speaker detection processed 6750 frames for 20260403_recording.mp4
+2026-05-17 23:10:10 | INFO | podcast_pipeline | Speaker detection processed 6900 frames for 20260403_recording.mp4
+2026-05-17 23:10:11 | INFO | podcast_pipeline | Speaker detection processed 7050 frames for 20260403_recording.mp4
+2026-05-17 23:10:11 | INFO | podcast_pipeline | Speaker detection processed 7200 frames for 20260403_recording.mp4
+2026-05-17 23:10:12 | INFO | podcast_pipeline | Speaker detection processed 7350 frames for 20260403_recording.mp4
+2026-05-17 23:10:12 | INFO | podcast_pipeline | Speaker detection processed 7500 frames for 20260403_recording.mp4
+2026-05-17 23:10:13 | INFO | podcast_pipeline | Speaker detection processed 7650 frames for 20260403_recording.mp4
+2026-05-17 23:10:13 | INFO | podcast_pipeline | Speaker detection processed 7800 frames for 20260403_recording.mp4
+2026-05-17 23:10:14 | INFO | podcast_pipeline | Speaker detection processed 7950 frames for 20260403_recording.mp4
+2026-05-17 23:10:14 | INFO | podcast_pipeline | Speaker detection processed 8100 frames for 20260403_recording.mp4
+2026-05-17 23:10:15 | INFO | podcast_pipeline | Speaker detection processed 8250 frames for 20260403_recording.mp4
+2026-05-17 23:10:15 | INFO | podcast_pipeline | Speaker detection processed 8400 frames for 20260403_recording.mp4
+2026-05-17 23:10:16 | INFO | podcast_pipeline | Speaker detection processed 8550 frames for 20260403_recording.mp4
+2026-05-17 23:10:16 | INFO | podcast_pipeline | Speaker detection processed 8700 frames for 20260403_recording.mp4
+2026-05-17 23:10:17 | INFO | podcast_pipeline | Speaker detection processed 8850 frames for 20260403_recording.mp4
+2026-05-17 23:10:17 | INFO | podcast_pipeline | Speaker detection processed 9000 frames for 20260403_recording.mp4
+2026-05-17 23:10:18 | INFO | podcast_pipeline | Speaker detection processed 9150 frames for 20260403_recording.mp4
+2026-05-17 23:10:18 | INFO | podcast_pipeline | Speaker detection processed 9300 frames for 20260403_recording.mp4
+2026-05-17 23:10:19 | INFO | podcast_pipeline | Speaker detection processed 9450 frames for 20260403_recording.mp4
+2026-05-17 23:10:19 | INFO | podcast_pipeline | Speaker detection processed 9600 frames for 20260403_recording.mp4
+2026-05-17 23:10:20 | INFO | podcast_pipeline | Speaker detection processed 9750 frames for 20260403_recording.mp4
+2026-05-17 23:10:20 | INFO | podcast_pipeline | Speaker detection processed 9900 frames for 20260403_recording.mp4
+2026-05-17 23:10:21 | INFO | podcast_pipeline | Speaker detection processed 10050 frames for 20260403_recording.mp4
+2026-05-17 23:10:21 | INFO | podcast_pipeline | Speaker detection processed 10200 frames for 20260403_recording.mp4
+2026-05-17 23:10:22 | INFO | podcast_pipeline | Speaker detection processed 10350 frames for 20260403_recording.mp4
+2026-05-17 23:10:22 | INFO | podcast_pipeline | Speaker detection processed 10500 frames for 20260403_recording.mp4
+2026-05-17 23:10:23 | INFO | podcast_pipeline | Speaker detection processed 10650 frames for 20260403_recording.mp4
+2026-05-17 23:10:23 | INFO | podcast_pipeline | Speaker detection processed 10800 frames for 20260403_recording.mp4
+2026-05-17 23:10:24 | INFO | podcast_pipeline | Speaker detection processed 10950 frames for 20260403_recording.mp4
+2026-05-17 23:10:24 | INFO | podcast_pipeline | Speaker detection processed 11100 frames for 20260403_recording.mp4
+2026-05-17 23:10:25 | INFO | podcast_pipeline | Speaker detection processed 11250 frames for 20260403_recording.mp4
+2026-05-17 23:10:25 | INFO | podcast_pipeline | Speaker detection processed 11400 frames for 20260403_recording.mp4
+2026-05-17 23:10:26 | INFO | podcast_pipeline | Speaker detection processed 11550 frames for 20260403_recording.mp4
+2026-05-17 23:10:26 | INFO | podcast_pipeline | Speaker detection processed 11700 frames for 20260403_recording.mp4
+2026-05-17 23:10:27 | INFO | podcast_pipeline | Speaker detection processed 11850 frames for 20260403_recording.mp4
+2026-05-17 23:10:27 | INFO | podcast_pipeline | Speaker detection processed 12000 frames for 20260403_recording.mp4
+2026-05-17 23:10:28 | INFO | podcast_pipeline | Speaker detection processed 12150 frames for 20260403_recording.mp4
+2026-05-17 23:10:28 | INFO | podcast_pipeline | Speaker detection processed 12300 frames for 20260403_recording.mp4
+2026-05-17 23:10:29 | INFO | podcast_pipeline | Speaker detection processed 12450 frames for 20260403_recording.mp4
+2026-05-17 23:10:29 | INFO | podcast_pipeline | Speaker detection processed 12600 frames for 20260403_recording.mp4
+2026-05-17 23:10:30 | INFO | podcast_pipeline | Speaker detection processed 12750 frames for 20260403_recording.mp4
+2026-05-17 23:10:31 | INFO | podcast_pipeline | Speaker detection processed 12900 frames for 20260403_recording.mp4
+2026-05-17 23:10:31 | INFO | podcast_pipeline | Speaker detection processed 13050 frames for 20260403_recording.mp4
+2026-05-17 23:10:32 | INFO | podcast_pipeline | Speaker detection processed 13200 frames for 20260403_recording.mp4
+2026-05-17 23:10:32 | INFO | podcast_pipeline | Speaker detection processed 13350 frames for 20260403_recording.mp4
+2026-05-17 23:10:33 | INFO | podcast_pipeline | Speaker detection processed 13500 frames for 20260403_recording.mp4
+2026-05-17 23:10:33 | INFO | podcast_pipeline | Speaker detection processed 13650 frames for 20260403_recording.mp4
+2026-05-17 23:10:34 | INFO | podcast_pipeline | Speaker detection processed 13800 frames for 20260403_recording.mp4
+2026-05-17 23:10:34 | INFO | podcast_pipeline | Speaker detection processed 13950 frames for 20260403_recording.mp4
+2026-05-17 23:10:35 | INFO | podcast_pipeline | Speaker detection processed 14100 frames for 20260403_recording.mp4
+2026-05-17 23:10:35 | INFO | podcast_pipeline | Speaker detection processed 14250 frames for 20260403_recording.mp4
+2026-05-17 23:10:36 | INFO | podcast_pipeline | Speaker detection processed 14400 frames for 20260403_recording.mp4
+2026-05-17 23:10:36 | INFO | podcast_pipeline | Speaker detection processed 14550 frames for 20260403_recording.mp4
+2026-05-17 23:10:37 | INFO | podcast_pipeline | Speaker detection processed 14700 frames for 20260403_recording.mp4
+2026-05-17 23:10:37 | INFO | podcast_pipeline | Speaker detection processed 14850 frames for 20260403_recording.mp4
+2026-05-17 23:10:38 | INFO | podcast_pipeline | Speaker detection processed 15000 frames for 20260403_recording.mp4
+2026-05-17 23:10:38 | INFO | podcast_pipeline | Speaker detection processed 15150 frames for 20260403_recording.mp4
+2026-05-17 23:10:39 | INFO | podcast_pipeline | Speaker detection processed 15300 frames for 20260403_recording.mp4
+2026-05-17 23:10:39 | INFO | podcast_pipeline | Speaker detection processed 15450 frames for 20260403_recording.mp4
+2026-05-17 23:10:40 | INFO | podcast_pipeline | Speaker detection processed 15600 frames for 20260403_recording.mp4
+2026-05-17 23:10:40 | INFO | podcast_pipeline | Speaker detection processed 15750 frames for 20260403_recording.mp4
+2026-05-17 23:10:41 | INFO | podcast_pipeline | Speaker detection processed 15900 frames for 20260403_recording.mp4
+2026-05-17 23:10:41 | INFO | podcast_pipeline | Speaker detection processed 16050 frames for 20260403_recording.mp4
+2026-05-17 23:10:42 | INFO | podcast_pipeline | Speaker detection processed 16200 frames for 20260403_recording.mp4
+2026-05-17 23:10:42 | INFO | podcast_pipeline | Speaker detection processed 16350 frames for 20260403_recording.mp4
+2026-05-17 23:10:43 | INFO | podcast_pipeline | Speaker detection processed 16500 frames for 20260403_recording.mp4
+2026-05-17 23:10:43 | INFO | podcast_pipeline | Speaker detection processed 16650 frames for 20260403_recording.mp4
+2026-05-17 23:10:44 | INFO | podcast_pipeline | Speaker detection processed 16800 frames for 20260403_recording.mp4
+2026-05-17 23:10:44 | INFO | podcast_pipeline | Speaker detection processed 16950 frames for 20260403_recording.mp4
+2026-05-17 23:10:45 | INFO | podcast_pipeline | Speaker detection processed 17100 frames for 20260403_recording.mp4
+2026-05-17 23:10:45 | INFO | podcast_pipeline | Speaker detection processed 17250 frames for 20260403_recording.mp4
+2026-05-17 23:10:46 | INFO | podcast_pipeline | Speaker detection processed 17400 frames for 20260403_recording.mp4
+2026-05-17 23:10:46 | INFO | podcast_pipeline | Speaker detection processed 17550 frames for 20260403_recording.mp4
+2026-05-17 23:10:47 | INFO | podcast_pipeline | Speaker detection processed 17700 frames for 20260403_recording.mp4
+2026-05-17 23:10:47 | INFO | podcast_pipeline | Speaker detection processed 17850 frames for 20260403_recording.mp4
+2026-05-17 23:10:48 | INFO | podcast_pipeline | Speaker detection processed 18000 frames for 20260403_recording.mp4
+2026-05-17 23:10:48 | INFO | podcast_pipeline | Speaker detection processed 18150 frames for 20260403_recording.mp4
+2026-05-17 23:10:49 | INFO | podcast_pipeline | Speaker detection processed 18300 frames for 20260403_recording.mp4
+2026-05-17 23:10:49 | INFO | podcast_pipeline | Speaker detection processed 18450 frames for 20260403_recording.mp4
+2026-05-17 23:10:50 | INFO | podcast_pipeline | Speaker detection processed 18600 frames for 20260403_recording.mp4
+2026-05-17 23:10:50 | INFO | podcast_pipeline | Speaker detection processed 18750 frames for 20260403_recording.mp4
+2026-05-17 23:10:51 | INFO | podcast_pipeline | Speaker detection processed 18900 frames for 20260403_recording.mp4
+2026-05-17 23:10:51 | INFO | podcast_pipeline | Speaker detection processed 19050 frames for 20260403_recording.mp4
+2026-05-17 23:10:52 | INFO | podcast_pipeline | Speaker detection processed 19200 frames for 20260403_recording.mp4
+2026-05-17 23:10:53 | INFO | podcast_pipeline | Speaker detection processed 19350 frames for 20260403_recording.mp4
+2026-05-17 23:10:53 | INFO | podcast_pipeline | Speaker detection processed 19500 frames for 20260403_recording.mp4
+2026-05-17 23:10:54 | INFO | podcast_pipeline | Speaker detection processed 19650 frames for 20260403_recording.mp4
+2026-05-17 23:10:54 | INFO | podcast_pipeline | Speaker detection processed 19800 frames for 20260403_recording.mp4
+2026-05-17 23:10:55 | INFO | podcast_pipeline | Speaker detection processed 19950 frames for 20260403_recording.mp4
+2026-05-17 23:10:55 | INFO | podcast_pipeline | Speaker detection processed 20100 frames for 20260403_recording.mp4
+2026-05-17 23:10:56 | INFO | podcast_pipeline | Speaker detection processed 20250 frames for 20260403_recording.mp4
+2026-05-17 23:10:56 | INFO | podcast_pipeline | Speaker detection processed 20400 frames for 20260403_recording.mp4
+2026-05-17 23:10:57 | INFO | podcast_pipeline | Speaker detection processed 20550 frames for 20260403_recording.mp4
+2026-05-17 23:10:57 | INFO | podcast_pipeline | Speaker detection processed 20700 frames for 20260403_recording.mp4
+2026-05-17 23:10:58 | INFO | podcast_pipeline | Speaker detection processed 20850 frames for 20260403_recording.mp4
+2026-05-17 23:10:58 | INFO | podcast_pipeline | Speaker detection processed 21000 frames for 20260403_recording.mp4
+2026-05-17 23:10:59 | INFO | podcast_pipeline | Speaker detection processed 21150 frames for 20260403_recording.mp4
+2026-05-17 23:10:59 | INFO | podcast_pipeline | Speaker detection processed 21300 frames for 20260403_recording.mp4
+2026-05-17 23:11:00 | INFO | podcast_pipeline | Speaker detection processed 21450 frames for 20260403_recording.mp4
+2026-05-17 23:11:00 | INFO | podcast_pipeline | Speaker detection processed 21600 frames for 20260403_recording.mp4
+2026-05-17 23:11:01 | INFO | podcast_pipeline | Speaker detection processed 21750 frames for 20260403_recording.mp4
+2026-05-17 23:11:01 | INFO | podcast_pipeline | Speaker detection processed 21900 frames for 20260403_recording.mp4
+2026-05-17 23:11:02 | INFO | podcast_pipeline | Speaker detection processed 22050 frames for 20260403_recording.mp4
+2026-05-17 23:11:02 | INFO | podcast_pipeline | Speaker detection processed 22200 frames for 20260403_recording.mp4
+2026-05-17 23:11:03 | INFO | podcast_pipeline | Speaker detection processed 22350 frames for 20260403_recording.mp4
+2026-05-17 23:11:03 | INFO | podcast_pipeline | Speaker detection processed 22500 frames for 20260403_recording.mp4
+2026-05-17 23:11:04 | INFO | podcast_pipeline | Speaker detection processed 22650 frames for 20260403_recording.mp4
+2026-05-17 23:11:04 | INFO | podcast_pipeline | Speaker detection processed 22800 frames for 20260403_recording.mp4
+2026-05-17 23:11:05 | INFO | podcast_pipeline | Speaker detection processed 22950 frames for 20260403_recording.mp4
+2026-05-17 23:11:05 | INFO | podcast_pipeline | Speaker detection processed 23100 frames for 20260403_recording.mp4
+2026-05-17 23:11:06 | INFO | podcast_pipeline | Speaker detection processed 23250 frames for 20260403_recording.mp4
+2026-05-17 23:11:06 | INFO | podcast_pipeline | Speaker detection processed 23400 frames for 20260403_recording.mp4
+2026-05-17 23:11:07 | INFO | podcast_pipeline | Speaker detection processed 23550 frames for 20260403_recording.mp4
+2026-05-17 23:11:07 | INFO | podcast_pipeline | Speaker detection processed 23700 frames for 20260403_recording.mp4
+2026-05-17 23:11:08 | INFO | podcast_pipeline | Speaker detection processed 23850 frames for 20260403_recording.mp4
+2026-05-17 23:11:08 | INFO | podcast_pipeline | Speaker detection processed 24000 frames for 20260403_recording.mp4
+2026-05-17 23:11:09 | INFO | podcast_pipeline | Speaker detection processed 24150 frames for 20260403_recording.mp4
+2026-05-17 23:11:09 | INFO | podcast_pipeline | Speaker detection processed 24300 frames for 20260403_recording.mp4
+2026-05-17 23:11:10 | INFO | podcast_pipeline | Speaker detection processed 24450 frames for 20260403_recording.mp4
+2026-05-17 23:11:10 | INFO | podcast_pipeline | Speaker detection processed 24600 frames for 20260403_recording.mp4
+2026-05-17 23:11:11 | INFO | podcast_pipeline | Speaker detection processed 24750 frames for 20260403_recording.mp4
+2026-05-17 23:11:12 | INFO | podcast_pipeline | Speaker detection processed 24900 frames for 20260403_recording.mp4
+2026-05-17 23:11:12 | INFO | podcast_pipeline | Speaker detection processed 25050 frames for 20260403_recording.mp4
+2026-05-17 23:11:13 | INFO | podcast_pipeline | Speaker detection processed 25200 frames for 20260403_recording.mp4
+2026-05-17 23:11:13 | INFO | podcast_pipeline | Speaker detection processed 25350 frames for 20260403_recording.mp4
+2026-05-17 23:11:14 | INFO | podcast_pipeline | Speaker detection processed 25500 frames for 20260403_recording.mp4
+2026-05-17 23:11:14 | INFO | podcast_pipeline | Speaker detection processed 25650 frames for 20260403_recording.mp4
+2026-05-17 23:11:15 | INFO | podcast_pipeline | Speaker detection processed 25800 frames for 20260403_recording.mp4
+2026-05-17 23:11:15 | INFO | podcast_pipeline | Speaker detection processed 25950 frames for 20260403_recording.mp4
+2026-05-17 23:11:16 | INFO | podcast_pipeline | Speaker detection processed 26100 frames for 20260403_recording.mp4
+2026-05-17 23:11:16 | INFO | podcast_pipeline | Speaker detection processed 26250 frames for 20260403_recording.mp4
+2026-05-17 23:11:17 | INFO | podcast_pipeline | Speaker detection processed 26400 frames for 20260403_recording.mp4
+2026-05-17 23:11:17 | INFO | podcast_pipeline | Speaker detection processed 26550 frames for 20260403_recording.mp4
+2026-05-17 23:11:18 | INFO | podcast_pipeline | Speaker detection processed 26700 frames for 20260403_recording.mp4
+2026-05-17 23:11:18 | INFO | podcast_pipeline | Speaker detection processed 26850 frames for 20260403_recording.mp4
+2026-05-17 23:11:19 | INFO | podcast_pipeline | Speaker detection processed 27000 frames for 20260403_recording.mp4
+2026-05-17 23:11:19 | INFO | podcast_pipeline | Speaker detection processed 27150 frames for 20260403_recording.mp4
+2026-05-17 23:11:20 | INFO | podcast_pipeline | Speaker detection processed 27300 frames for 20260403_recording.mp4
+2026-05-17 23:11:20 | INFO | podcast_pipeline | Speaker detection processed 27450 frames for 20260403_recording.mp4
+2026-05-17 23:11:21 | INFO | podcast_pipeline | Speaker detection processed 27600 frames for 20260403_recording.mp4
+2026-05-17 23:11:21 | INFO | podcast_pipeline | Speaker detection processed 27750 frames for 20260403_recording.mp4
+2026-05-17 23:11:22 | INFO | podcast_pipeline | Speaker detection processed 27900 frames for 20260403_recording.mp4
+2026-05-17 23:11:22 | INFO | podcast_pipeline | Speaker detection processed 28050 frames for 20260403_recording.mp4
+2026-05-17 23:11:23 | INFO | podcast_pipeline | Speaker detection processed 28200 frames for 20260403_recording.mp4
+2026-05-17 23:11:23 | INFO | podcast_pipeline | Speaker detection processed 28350 frames for 20260403_recording.mp4
+2026-05-17 23:11:24 | INFO | podcast_pipeline | Speaker detection processed 28500 frames for 20260403_recording.mp4
+2026-05-17 23:11:24 | INFO | podcast_pipeline | Speaker detection processed 28650 frames for 20260403_recording.mp4
+2026-05-17 23:11:25 | INFO | podcast_pipeline | Speaker detection processed 28800 frames for 20260403_recording.mp4
+2026-05-17 23:11:25 | INFO | podcast_pipeline | Speaker detection processed 28950 frames for 20260403_recording.mp4
+2026-05-17 23:11:26 | INFO | podcast_pipeline | Speaker detection processed 29100 frames for 20260403_recording.mp4
+2026-05-17 23:11:26 | INFO | podcast_pipeline | Speaker detection processed 29250 frames for 20260403_recording.mp4
+2026-05-17 23:11:27 | INFO | podcast_pipeline | Speaker detection processed 29400 frames for 20260403_recording.mp4
+2026-05-17 23:11:27 | INFO | podcast_pipeline | Speaker detection processed 29550 frames for 20260403_recording.mp4
+2026-05-17 23:11:28 | INFO | podcast_pipeline | Speaker detection processed 29700 frames for 20260403_recording.mp4
+2026-05-17 23:11:28 | INFO | podcast_pipeline | Speaker detection processed 29850 frames for 20260403_recording.mp4
+2026-05-17 23:11:29 | INFO | podcast_pipeline | Speaker detection processed 30000 frames for 20260403_recording.mp4
+2026-05-17 23:11:29 | INFO | podcast_pipeline | Speaker detection processed 30150 frames for 20260403_recording.mp4
+2026-05-17 23:11:30 | INFO | podcast_pipeline | Speaker detection processed 30300 frames for 20260403_recording.mp4
+2026-05-17 23:11:30 | INFO | podcast_pipeline | Speaker detection processed 30450 frames for 20260403_recording.mp4
+2026-05-17 23:11:31 | INFO | podcast_pipeline | Speaker detection processed 30600 frames for 20260403_recording.mp4
+2026-05-17 23:11:31 | INFO | podcast_pipeline | Speaker detection processed 30750 frames for 20260403_recording.mp4
+2026-05-17 23:11:32 | INFO | podcast_pipeline | Speaker detection processed 30900 frames for 20260403_recording.mp4
+2026-05-17 23:11:32 | INFO | podcast_pipeline | Speaker detection processed 31050 frames for 20260403_recording.mp4
+2026-05-17 23:11:33 | INFO | podcast_pipeline | Speaker detection processed 31200 frames for 20260403_recording.mp4
+2026-05-17 23:11:33 | INFO | podcast_pipeline | Speaker detection processed 31350 frames for 20260403_recording.mp4
+2026-05-17 23:11:34 | INFO | podcast_pipeline | Speaker detection processed 31500 frames for 20260403_recording.mp4
+2026-05-17 23:11:34 | INFO | podcast_pipeline | Speaker detection processed 31650 frames for 20260403_recording.mp4
+2026-05-17 23:11:35 | INFO | podcast_pipeline | Speaker detection processed 31800 frames for 20260403_recording.mp4
+2026-05-17 23:11:35 | INFO | podcast_pipeline | Speaker detection processed 31950 frames for 20260403_recording.mp4
+2026-05-17 23:11:36 | INFO | podcast_pipeline | Speaker detection processed 32100 frames for 20260403_recording.mp4
+2026-05-17 23:11:36 | INFO | podcast_pipeline | Speaker detection processed 32250 frames for 20260403_recording.mp4
+2026-05-17 23:11:37 | INFO | podcast_pipeline | Speaker detection processed 32400 frames for 20260403_recording.mp4
+2026-05-17 23:11:37 | INFO | podcast_pipeline | Speaker detection processed 32550 frames for 20260403_recording.mp4
+2026-05-17 23:11:38 | INFO | podcast_pipeline | Speaker detection processed 32700 frames for 20260403_recording.mp4
+2026-05-17 23:11:38 | INFO | podcast_pipeline | Speaker detection processed 32850 frames for 20260403_recording.mp4
+2026-05-17 23:11:39 | INFO | podcast_pipeline | Speaker detection processed 33000 frames for 20260403_recording.mp4
+2026-05-17 23:11:39 | INFO | podcast_pipeline | Speaker detection processed 33150 frames for 20260403_recording.mp4
+2026-05-17 23:11:40 | INFO | podcast_pipeline | Speaker detection processed 33300 frames for 20260403_recording.mp4
+2026-05-17 23:11:40 | INFO | podcast_pipeline | Speaker detection processed 33450 frames for 20260403_recording.mp4
+2026-05-17 23:11:41 | INFO | podcast_pipeline | Speaker detection processed 33600 frames for 20260403_recording.mp4
+2026-05-17 23:11:41 | INFO | podcast_pipeline | Speaker detection processed 33750 frames for 20260403_recording.mp4
+2026-05-17 23:11:42 | INFO | podcast_pipeline | Speaker detection processed 33900 frames for 20260403_recording.mp4
+2026-05-17 23:11:42 | INFO | podcast_pipeline | Speaker detection processed 34050 frames for 20260403_recording.mp4
+2026-05-17 23:11:43 | INFO | podcast_pipeline | Speaker detection processed 34200 frames for 20260403_recording.mp4
+2026-05-17 23:11:43 | INFO | podcast_pipeline | Speaker detection processed 34350 frames for 20260403_recording.mp4
+2026-05-17 23:11:44 | INFO | podcast_pipeline | Speaker detection processed 34500 frames for 20260403_recording.mp4
+2026-05-17 23:11:44 | INFO | podcast_pipeline | Speaker detection processed 34650 frames for 20260403_recording.mp4
+2026-05-17 23:11:45 | INFO | podcast_pipeline | Speaker detection processed 34800 frames for 20260403_recording.mp4
+2026-05-17 23:11:45 | INFO | podcast_pipeline | Speaker detection processed 34950 frames for 20260403_recording.mp4
+2026-05-17 23:11:46 | INFO | podcast_pipeline | Speaker detection processed 35100 frames for 20260403_recording.mp4
+2026-05-17 23:11:46 | INFO | podcast_pipeline | Speaker detection processed 35250 frames for 20260403_recording.mp4
+2026-05-17 23:11:47 | INFO | podcast_pipeline | Speaker detection processed 35400 frames for 20260403_recording.mp4
+2026-05-17 23:11:47 | INFO | podcast_pipeline | Speaker detection processed 35550 frames for 20260403_recording.mp4
+2026-05-17 23:11:48 | INFO | podcast_pipeline | Speaker detection processed 35700 frames for 20260403_recording.mp4
+2026-05-17 23:11:49 | INFO | podcast_pipeline | Speaker detection processed 35850 frames for 20260403_recording.mp4
+2026-05-17 23:11:49 | INFO | podcast_pipeline | Speaker detection processed 36000 frames for 20260403_recording.mp4
+2026-05-17 23:11:49 | INFO | podcast_pipeline | Speaker detection processed 36150 frames for 20260403_recording.mp4
+2026-05-17 23:11:50 | INFO | podcast_pipeline | Speaker detection processed 36300 frames for 20260403_recording.mp4
+2026-05-17 23:11:51 | INFO | podcast_pipeline | Speaker detection processed 36450 frames for 20260403_recording.mp4
+2026-05-17 23:11:51 | INFO | podcast_pipeline | Speaker detection processed 36600 frames for 20260403_recording.mp4
+2026-05-17 23:11:52 | INFO | podcast_pipeline | Speaker detection processed 36750 frames for 20260403_recording.mp4
+2026-05-17 23:11:52 | INFO | podcast_pipeline | Speaker detection processed 36900 frames for 20260403_recording.mp4
+2026-05-17 23:11:53 | INFO | podcast_pipeline | Speaker detection processed 37050 frames for 20260403_recording.mp4
+2026-05-17 23:11:53 | INFO | podcast_pipeline | Speaker detection processed 37200 frames for 20260403_recording.mp4
+2026-05-17 23:11:54 | INFO | podcast_pipeline | Speaker detection processed 37350 frames for 20260403_recording.mp4
+2026-05-17 23:11:54 | INFO | podcast_pipeline | Speaker detection processed 37500 frames for 20260403_recording.mp4
+2026-05-17 23:11:55 | INFO | podcast_pipeline | Speaker detection processed 37650 frames for 20260403_recording.mp4
+2026-05-17 23:11:55 | INFO | podcast_pipeline | Speaker detection processed 37800 frames for 20260403_recording.mp4
+2026-05-17 23:11:56 | INFO | podcast_pipeline | Speaker detection processed 37950 frames for 20260403_recording.mp4
+2026-05-17 23:11:56 | INFO | podcast_pipeline | Speaker detection processed 38100 frames for 20260403_recording.mp4
+2026-05-17 23:11:57 | INFO | podcast_pipeline | Speaker detection processed 38250 frames for 20260403_recording.mp4
+2026-05-17 23:11:57 | INFO | podcast_pipeline | Speaker detection processed 38400 frames for 20260403_recording.mp4
+2026-05-17 23:11:58 | INFO | podcast_pipeline | Speaker detection processed 38550 frames for 20260403_recording.mp4
+2026-05-17 23:11:58 | INFO | podcast_pipeline | Speaker detection processed 38700 frames for 20260403_recording.mp4
+2026-05-17 23:11:59 | INFO | podcast_pipeline | Speaker detection processed 38850 frames for 20260403_recording.mp4
+2026-05-17 23:11:59 | INFO | podcast_pipeline | Speaker detection processed 39000 frames for 20260403_recording.mp4
+2026-05-17 23:12:00 | INFO | podcast_pipeline | Speaker detection processed 39150 frames for 20260403_recording.mp4
+2026-05-17 23:12:00 | INFO | podcast_pipeline | Speaker detection processed 39300 frames for 20260403_recording.mp4
+2026-05-17 23:12:01 | INFO | podcast_pipeline | Speaker detection processed 39450 frames for 20260403_recording.mp4
+2026-05-17 23:12:01 | INFO | podcast_pipeline | Speaker detection processed 39600 frames for 20260403_recording.mp4
+2026-05-17 23:12:02 | INFO | podcast_pipeline | Speaker detection processed 39750 frames for 20260403_recording.mp4
+2026-05-17 23:12:02 | INFO | podcast_pipeline | Speaker detection processed 39900 frames for 20260403_recording.mp4
+2026-05-17 23:12:03 | INFO | podcast_pipeline | Speaker detection processed 40050 frames for 20260403_recording.mp4
+2026-05-17 23:12:03 | INFO | podcast_pipeline | Speaker detection processed 40200 frames for 20260403_recording.mp4
+2026-05-17 23:12:04 | INFO | podcast_pipeline | Speaker detection processed 40350 frames for 20260403_recording.mp4
+2026-05-17 23:12:04 | INFO | podcast_pipeline | Speaker detection processed 40500 frames for 20260403_recording.mp4
+2026-05-17 23:12:05 | INFO | podcast_pipeline | Speaker detection processed 40650 frames for 20260403_recording.mp4
+2026-05-17 23:12:05 | INFO | podcast_pipeline | Speaker detection processed 40800 frames for 20260403_recording.mp4
+2026-05-17 23:12:06 | INFO | podcast_pipeline | Speaker detection processed 40950 frames for 20260403_recording.mp4
+2026-05-17 23:12:06 | INFO | podcast_pipeline | Speaker detection processed 41100 frames for 20260403_recording.mp4
+2026-05-17 23:12:07 | INFO | podcast_pipeline | Speaker detection processed 41250 frames for 20260403_recording.mp4
+2026-05-17 23:12:07 | INFO | podcast_pipeline | Speaker detection processed 41400 frames for 20260403_recording.mp4
+2026-05-17 23:12:08 | INFO | podcast_pipeline | Speaker detection processed 41550 frames for 20260403_recording.mp4
+2026-05-17 23:12:08 | INFO | podcast_pipeline | Speaker detection processed 41700 frames for 20260403_recording.mp4
+2026-05-17 23:12:09 | INFO | podcast_pipeline | Speaker detection processed 41850 frames for 20260403_recording.mp4
+2026-05-17 23:12:09 | INFO | podcast_pipeline | Speaker detection processed 42000 frames for 20260403_recording.mp4
+2026-05-17 23:12:10 | INFO | podcast_pipeline | Speaker detection processed 42150 frames for 20260403_recording.mp4
+2026-05-17 23:12:10 | INFO | podcast_pipeline | Speaker detection processed 42300 frames for 20260403_recording.mp4
+2026-05-17 23:12:11 | INFO | podcast_pipeline | Speaker detection processed 42450 frames for 20260403_recording.mp4
+2026-05-17 23:12:11 | INFO | podcast_pipeline | Speaker detection processed 42600 frames for 20260403_recording.mp4
+2026-05-17 23:12:12 | INFO | podcast_pipeline | Speaker detection processed 42750 frames for 20260403_recording.mp4
+2026-05-17 23:12:12 | INFO | podcast_pipeline | Speaker detection processed 42900 frames for 20260403_recording.mp4
+2026-05-17 23:12:13 | INFO | podcast_pipeline | Speaker detection processed 43050 frames for 20260403_recording.mp4
+2026-05-17 23:12:13 | INFO | podcast_pipeline | Speaker detection processed 43200 frames for 20260403_recording.mp4
+2026-05-17 23:12:14 | INFO | podcast_pipeline | Speaker detection processed 43350 frames for 20260403_recording.mp4
+2026-05-17 23:12:14 | INFO | podcast_pipeline | Speaker detection processed 43500 frames for 20260403_recording.mp4
+2026-05-17 23:12:15 | INFO | podcast_pipeline | Speaker detection processed 43650 frames for 20260403_recording.mp4
+2026-05-17 23:12:16 | INFO | podcast_pipeline | Speaker detection processed 43800 frames for 20260403_recording.mp4
+2026-05-17 23:12:16 | INFO | podcast_pipeline | Speaker detection processed 43950 frames for 20260403_recording.mp4
+2026-05-17 23:12:17 | INFO | podcast_pipeline | Speaker detection processed 44100 frames for 20260403_recording.mp4
+2026-05-17 23:12:17 | INFO | podcast_pipeline | Speaker detection processed 44250 frames for 20260403_recording.mp4
+2026-05-17 23:12:18 | INFO | podcast_pipeline | Speaker detection processed 44400 frames for 20260403_recording.mp4
+2026-05-17 23:12:18 | INFO | podcast_pipeline | Speaker detection processed 44550 frames for 20260403_recording.mp4
+2026-05-17 23:12:19 | INFO | podcast_pipeline | Speaker detection processed 44700 frames for 20260403_recording.mp4
+2026-05-17 23:12:19 | INFO | podcast_pipeline | Speaker detection processed 44850 frames for 20260403_recording.mp4
+2026-05-17 23:12:19 | INFO | podcast_pipeline | Speaker detection processed 45000 frames for 20260403_recording.mp4
+2026-05-17 23:12:20 | INFO | podcast_pipeline | Speaker detection processed 45150 frames for 20260403_recording.mp4
+2026-05-17 23:12:20 | INFO | podcast_pipeline | Speaker detection processed 45300 frames for 20260403_recording.mp4
+2026-05-17 23:12:21 | INFO | podcast_pipeline | Speaker detection processed 45450 frames for 20260403_recording.mp4
+2026-05-17 23:12:21 | INFO | podcast_pipeline | Speaker detection processed 45600 frames for 20260403_recording.mp4
+2026-05-17 23:12:22 | INFO | podcast_pipeline | Speaker detection processed 45750 frames for 20260403_recording.mp4
+2026-05-17 23:12:22 | INFO | podcast_pipeline | Speaker detection processed 45900 frames for 20260403_recording.mp4
+2026-05-17 23:12:23 | INFO | podcast_pipeline | Speaker detection processed 46050 frames for 20260403_recording.mp4
+2026-05-17 23:12:23 | INFO | podcast_pipeline | Speaker detection processed 46200 frames for 20260403_recording.mp4
+2026-05-17 23:12:24 | INFO | podcast_pipeline | Speaker detection processed 46350 frames for 20260403_recording.mp4
+2026-05-17 23:12:24 | INFO | podcast_pipeline | Speaker detection processed 46500 frames for 20260403_recording.mp4
+2026-05-17 23:12:25 | INFO | podcast_pipeline | Speaker detection processed 46650 frames for 20260403_recording.mp4
+2026-05-17 23:12:25 | INFO | podcast_pipeline | Speaker detection processed 46800 frames for 20260403_recording.mp4
+2026-05-17 23:12:26 | INFO | podcast_pipeline | Speaker detection processed 46950 frames for 20260403_recording.mp4
+2026-05-17 23:12:26 | INFO | podcast_pipeline | Speaker detection processed 47100 frames for 20260403_recording.mp4
+2026-05-17 23:12:27 | INFO | podcast_pipeline | Speaker detection processed 47250 frames for 20260403_recording.mp4
+2026-05-17 23:12:27 | INFO | podcast_pipeline | Speaker detection processed 47400 frames for 20260403_recording.mp4
+2026-05-17 23:12:27 | INFO | podcast_pipeline | Speaker detection processed 47550 frames for 20260403_recording.mp4
+2026-05-17 23:12:28 | INFO | podcast_pipeline | Speaker detection processed 47700 frames for 20260403_recording.mp4
+2026-05-17 23:12:28 | INFO | podcast_pipeline | Speaker detection processed 47850 frames for 20260403_recording.mp4
+2026-05-17 23:12:29 | INFO | podcast_pipeline | Speaker detection processed 48000 frames for 20260403_recording.mp4
+2026-05-17 23:12:29 | INFO | podcast_pipeline | Speaker detection processed 48150 frames for 20260403_recording.mp4
+2026-05-17 23:12:30 | INFO | podcast_pipeline | Speaker detection processed 48300 frames for 20260403_recording.mp4
+2026-05-17 23:12:31 | INFO | podcast_pipeline | Speaker detection processed 48450 frames for 20260403_recording.mp4
+2026-05-17 23:12:31 | INFO | podcast_pipeline | Speaker detection processed 48600 frames for 20260403_recording.mp4
+2026-05-17 23:12:32 | INFO | podcast_pipeline | Speaker detection processed 48750 frames for 20260403_recording.mp4
+2026-05-17 23:12:32 | INFO | podcast_pipeline | Speaker detection processed 48900 frames for 20260403_recording.mp4
+2026-05-17 23:12:33 | INFO | podcast_pipeline | Speaker detection processed 49050 frames for 20260403_recording.mp4
+2026-05-17 23:12:33 | INFO | podcast_pipeline | Speaker detection processed 49200 frames for 20260403_recording.mp4
+2026-05-17 23:12:34 | INFO | podcast_pipeline | Speaker detection processed 49350 frames for 20260403_recording.mp4
+2026-05-17 23:12:34 | INFO | podcast_pipeline | Speaker detection processed 49500 frames for 20260403_recording.mp4
+2026-05-17 23:12:35 | INFO | podcast_pipeline | Speaker detection processed 49650 frames for 20260403_recording.mp4
+2026-05-17 23:12:35 | INFO | podcast_pipeline | Speaker detection processed 49800 frames for 20260403_recording.mp4
+2026-05-17 23:12:36 | INFO | podcast_pipeline | Speaker detection processed 49950 frames for 20260403_recording.mp4
+2026-05-17 23:12:36 | INFO | podcast_pipeline | Speaker detection processed 50100 frames for 20260403_recording.mp4
+2026-05-17 23:12:37 | INFO | podcast_pipeline | Speaker detection processed 50250 frames for 20260403_recording.mp4
+2026-05-17 23:12:37 | INFO | podcast_pipeline | Speaker detection processed 50400 frames for 20260403_recording.mp4
+2026-05-17 23:12:38 | INFO | podcast_pipeline | Speaker detection processed 50550 frames for 20260403_recording.mp4
+2026-05-17 23:12:38 | INFO | podcast_pipeline | Speaker detection processed 50700 frames for 20260403_recording.mp4
+2026-05-17 23:12:39 | INFO | podcast_pipeline | Speaker detection processed 50850 frames for 20260403_recording.mp4
+2026-05-17 23:12:39 | INFO | podcast_pipeline | Speaker detection processed 51000 frames for 20260403_recording.mp4
+2026-05-17 23:12:40 | INFO | podcast_pipeline | Speaker detection processed 51150 frames for 20260403_recording.mp4
+2026-05-17 23:12:40 | INFO | podcast_pipeline | Speaker detection processed 51300 frames for 20260403_recording.mp4
+2026-05-17 23:12:41 | INFO | podcast_pipeline | Speaker detection processed 51450 frames for 20260403_recording.mp4
+2026-05-17 23:12:41 | INFO | podcast_pipeline | Speaker detection processed 51600 frames for 20260403_recording.mp4
+2026-05-17 23:12:42 | INFO | podcast_pipeline | Speaker detection processed 51750 frames for 20260403_recording.mp4
+2026-05-17 23:12:42 | INFO | podcast_pipeline | Speaker detection processed 51900 frames for 20260403_recording.mp4
+2026-05-17 23:12:43 | INFO | podcast_pipeline | Speaker detection processed 52050 frames for 20260403_recording.mp4
+2026-05-17 23:12:43 | INFO | podcast_pipeline | Speaker detection processed 52200 frames for 20260403_recording.mp4
+2026-05-17 23:12:44 | INFO | podcast_pipeline | Speaker detection processed 52350 frames for 20260403_recording.mp4
+2026-05-17 23:12:44 | INFO | podcast_pipeline | Speaker detection processed 52500 frames for 20260403_recording.mp4
+2026-05-17 23:12:45 | INFO | podcast_pipeline | Speaker detection processed 52650 frames for 20260403_recording.mp4
+2026-05-17 23:12:45 | INFO | podcast_pipeline | Speaker detection processed 52800 frames for 20260403_recording.mp4
+2026-05-17 23:12:46 | INFO | podcast_pipeline | Speaker detection processed 52950 frames for 20260403_recording.mp4
+2026-05-17 23:12:46 | INFO | podcast_pipeline | Speaker detection processed 53100 frames for 20260403_recording.mp4
+2026-05-17 23:12:47 | INFO | podcast_pipeline | Speaker detection processed 53250 frames for 20260403_recording.mp4
+2026-05-17 23:12:47 | INFO | podcast_pipeline | Speaker detection processed 53400 frames for 20260403_recording.mp4
+2026-05-17 23:12:48 | INFO | podcast_pipeline | Speaker detection processed 53550 frames for 20260403_recording.mp4
+2026-05-17 23:12:48 | INFO | podcast_pipeline | Speaker detection processed 53700 frames for 20260403_recording.mp4
+2026-05-17 23:12:49 | INFO | podcast_pipeline | Speaker detection processed 53850 frames for 20260403_recording.mp4
+2026-05-17 23:12:49 | INFO | podcast_pipeline | Speaker detection processed 54000 frames for 20260403_recording.mp4
+2026-05-17 23:12:50 | INFO | podcast_pipeline | Speaker detection processed 54150 frames for 20260403_recording.mp4
+2026-05-17 23:12:50 | INFO | podcast_pipeline | Speaker detection processed 54300 frames for 20260403_recording.mp4
+2026-05-17 23:12:51 | INFO | podcast_pipeline | Speaker detection processed 54450 frames for 20260403_recording.mp4
+2026-05-17 23:12:51 | INFO | podcast_pipeline | Speaker detection processed 54600 frames for 20260403_recording.mp4
+2026-05-17 23:12:52 | INFO | podcast_pipeline | Speaker detection processed 54750 frames for 20260403_recording.mp4
+2026-05-17 23:12:52 | INFO | podcast_pipeline | Speaker detection processed 54900 frames for 20260403_recording.mp4
+2026-05-17 23:12:53 | INFO | podcast_pipeline | Speaker detection processed 55050 frames for 20260403_recording.mp4
+2026-05-17 23:12:53 | INFO | podcast_pipeline | Speaker detection processed 55200 frames for 20260403_recording.mp4
+2026-05-17 23:12:54 | INFO | podcast_pipeline | Speaker detection processed 55350 frames for 20260403_recording.mp4
+2026-05-17 23:12:54 | INFO | podcast_pipeline | Speaker detection processed 55500 frames for 20260403_recording.mp4
+2026-05-17 23:12:55 | INFO | podcast_pipeline | Speaker detection processed 55650 frames for 20260403_recording.mp4
+2026-05-17 23:12:55 | INFO | podcast_pipeline | Speaker detection processed 55800 frames for 20260403_recording.mp4
+2026-05-17 23:12:56 | INFO | podcast_pipeline | Speaker detection processed 55950 frames for 20260403_recording.mp4
+2026-05-17 23:12:56 | INFO | podcast_pipeline | Speaker detection processed 56100 frames for 20260403_recording.mp4
+2026-05-17 23:12:57 | INFO | podcast_pipeline | Speaker detection processed 56250 frames for 20260403_recording.mp4
+2026-05-17 23:12:57 | INFO | podcast_pipeline | Speaker detection processed 56400 frames for 20260403_recording.mp4
+2026-05-17 23:12:58 | INFO | podcast_pipeline | Speaker detection processed 56550 frames for 20260403_recording.mp4
+2026-05-17 23:12:58 | INFO | podcast_pipeline | Speaker detection processed 56700 frames for 20260403_recording.mp4
+2026-05-17 23:12:59 | INFO | podcast_pipeline | Speaker detection processed 56850 frames for 20260403_recording.mp4
+2026-05-17 23:13:00 | INFO | podcast_pipeline | Speaker detection processed 57000 frames for 20260403_recording.mp4
+2026-05-17 23:13:00 | INFO | podcast_pipeline | Speaker detection processed 57150 frames for 20260403_recording.mp4
+2026-05-17 23:13:01 | INFO | podcast_pipeline | Speaker detection processed 57300 frames for 20260403_recording.mp4
+2026-05-17 23:13:01 | INFO | podcast_pipeline | Speaker detection processed 57450 frames for 20260403_recording.mp4
+2026-05-17 23:13:02 | INFO | podcast_pipeline | Speaker detection processed 57600 frames for 20260403_recording.mp4
+2026-05-17 23:13:02 | INFO | podcast_pipeline | Speaker detection processed 57750 frames for 20260403_recording.mp4
+2026-05-17 23:13:03 | INFO | podcast_pipeline | Speaker detection processed 57900 frames for 20260403_recording.mp4
+2026-05-17 23:13:03 | INFO | podcast_pipeline | Speaker detection processed 58050 frames for 20260403_recording.mp4
+2026-05-17 23:13:04 | INFO | podcast_pipeline | Speaker detection processed 58200 frames for 20260403_recording.mp4
+2026-05-17 23:13:04 | INFO | podcast_pipeline | Speaker detection processed 58350 frames for 20260403_recording.mp4
+2026-05-17 23:13:05 | INFO | podcast_pipeline | Speaker detection processed 58500 frames for 20260403_recording.mp4
+2026-05-17 23:13:05 | INFO | podcast_pipeline | Speaker detection processed 58650 frames for 20260403_recording.mp4
+2026-05-17 23:13:06 | INFO | podcast_pipeline | Speaker detection processed 58800 frames for 20260403_recording.mp4
+2026-05-17 23:13:06 | INFO | podcast_pipeline | Speaker detection processed 58950 frames for 20260403_recording.mp4
+2026-05-17 23:13:07 | INFO | podcast_pipeline | Speaker detection processed 59100 frames for 20260403_recording.mp4
+2026-05-17 23:13:07 | INFO | podcast_pipeline | Speaker detection processed 59250 frames for 20260403_recording.mp4
+2026-05-17 23:13:08 | INFO | podcast_pipeline | Speaker detection processed 59400 frames for 20260403_recording.mp4
+2026-05-17 23:13:08 | INFO | podcast_pipeline | Speaker detection processed 59550 frames for 20260403_recording.mp4
+2026-05-17 23:13:09 | INFO | podcast_pipeline | Speaker detection processed 59700 frames for 20260403_recording.mp4
+2026-05-17 23:13:09 | INFO | podcast_pipeline | Speaker detection processed 59850 frames for 20260403_recording.mp4
+2026-05-17 23:13:10 | INFO | podcast_pipeline | Speaker detection processed 60000 frames for 20260403_recording.mp4
+2026-05-17 23:13:10 | INFO | podcast_pipeline | Speaker detection processed 60150 frames for 20260403_recording.mp4
+2026-05-17 23:13:11 | INFO | podcast_pipeline | Speaker detection processed 60300 frames for 20260403_recording.mp4
+2026-05-17 23:13:11 | INFO | podcast_pipeline | Speaker detection processed 60450 frames for 20260403_recording.mp4
+2026-05-17 23:13:12 | INFO | podcast_pipeline | Speaker detection processed 60600 frames for 20260403_recording.mp4
+2026-05-17 23:13:12 | INFO | podcast_pipeline | Speaker detection processed 60750 frames for 20260403_recording.mp4
+2026-05-17 23:13:13 | INFO | podcast_pipeline | Speaker detection processed 60900 frames for 20260403_recording.mp4
+2026-05-17 23:13:13 | INFO | podcast_pipeline | Speaker detection processed 61050 frames for 20260403_recording.mp4
+2026-05-17 23:13:14 | INFO | podcast_pipeline | Speaker detection processed 61200 frames for 20260403_recording.mp4
+2026-05-17 23:13:14 | INFO | podcast_pipeline | Speaker detection processed 61350 frames for 20260403_recording.mp4
+2026-05-17 23:13:15 | INFO | podcast_pipeline | Speaker detection processed 61500 frames for 20260403_recording.mp4
+2026-05-17 23:13:16 | INFO | podcast_pipeline | Speaker detection processed 61650 frames for 20260403_recording.mp4
+2026-05-17 23:13:16 | INFO | podcast_pipeline | Speaker detection processed 61800 frames for 20260403_recording.mp4
+2026-05-17 23:13:17 | INFO | podcast_pipeline | Speaker detection processed 61950 frames for 20260403_recording.mp4
+2026-05-17 23:13:17 | INFO | podcast_pipeline | Speaker detection processed 62100 frames for 20260403_recording.mp4
+2026-05-17 23:13:18 | INFO | podcast_pipeline | Speaker detection processed 62250 frames for 20260403_recording.mp4
+2026-05-17 23:13:18 | INFO | podcast_pipeline | Speaker detection processed 62400 frames for 20260403_recording.mp4
+2026-05-17 23:13:19 | INFO | podcast_pipeline | Speaker detection processed 62550 frames for 20260403_recording.mp4
+2026-05-17 23:13:19 | INFO | podcast_pipeline | Speaker detection processed 62700 frames for 20260403_recording.mp4
+2026-05-17 23:13:20 | INFO | podcast_pipeline | Speaker detection processed 62850 frames for 20260403_recording.mp4
+2026-05-17 23:13:20 | INFO | podcast_pipeline | Speaker detection processed 63000 frames for 20260403_recording.mp4
+2026-05-17 23:13:21 | INFO | podcast_pipeline | Speaker detection processed 63150 frames for 20260403_recording.mp4
+2026-05-17 23:13:21 | INFO | podcast_pipeline | Speaker detection processed 63300 frames for 20260403_recording.mp4
+2026-05-17 23:13:22 | INFO | podcast_pipeline | Speaker detection processed 63450 frames for 20260403_recording.mp4
+2026-05-17 23:13:22 | INFO | podcast_pipeline | Speaker detection processed 63600 frames for 20260403_recording.mp4
+2026-05-17 23:13:23 | INFO | podcast_pipeline | Speaker detection processed 63750 frames for 20260403_recording.mp4
+2026-05-17 23:13:23 | INFO | podcast_pipeline | Speaker detection processed 63900 frames for 20260403_recording.mp4
+2026-05-17 23:13:24 | INFO | podcast_pipeline | Speaker detection processed 64050 frames for 20260403_recording.mp4
+2026-05-17 23:13:24 | INFO | podcast_pipeline | Speaker detection processed 64200 frames for 20260403_recording.mp4
+2026-05-17 23:13:25 | INFO | podcast_pipeline | Speaker detection processed 64350 frames for 20260403_recording.mp4
+2026-05-17 23:13:25 | INFO | podcast_pipeline | Speaker detection processed 64500 frames for 20260403_recording.mp4
+2026-05-17 23:13:26 | INFO | podcast_pipeline | Speaker detection processed 64650 frames for 20260403_recording.mp4
+2026-05-17 23:13:26 | INFO | podcast_pipeline | Speaker detection processed 64800 frames for 20260403_recording.mp4
+2026-05-17 23:13:27 | INFO | podcast_pipeline | Speaker detection processed 64950 frames for 20260403_recording.mp4
+2026-05-17 23:13:27 | INFO | podcast_pipeline | Speaker detection processed 65100 frames for 20260403_recording.mp4
+2026-05-17 23:13:28 | INFO | podcast_pipeline | Speaker detection processed 65250 frames for 20260403_recording.mp4
+2026-05-17 23:13:28 | INFO | podcast_pipeline | Speaker detection processed 65400 frames for 20260403_recording.mp4
+2026-05-17 23:13:29 | INFO | podcast_pipeline | Speaker detection processed 65550 frames for 20260403_recording.mp4
+2026-05-17 23:13:29 | INFO | podcast_pipeline | Speaker detection processed 65700 frames for 20260403_recording.mp4
+2026-05-17 23:13:30 | INFO | podcast_pipeline | Speaker detection processed 65850 frames for 20260403_recording.mp4
+2026-05-17 23:13:30 | INFO | podcast_pipeline | Speaker detection processed 66000 frames for 20260403_recording.mp4
+2026-05-17 23:13:31 | INFO | podcast_pipeline | Speaker detection processed 66150 frames for 20260403_recording.mp4
+2026-05-17 23:13:31 | INFO | podcast_pipeline | Speaker detection processed 66300 frames for 20260403_recording.mp4
+2026-05-17 23:13:32 | INFO | podcast_pipeline | Speaker detection processed 66450 frames for 20260403_recording.mp4
+2026-05-17 23:13:32 | INFO | podcast_pipeline | Speaker detection processed 66600 frames for 20260403_recording.mp4
+2026-05-17 23:13:33 | INFO | podcast_pipeline | Speaker detection processed 66750 frames for 20260403_recording.mp4
+2026-05-17 23:13:33 | INFO | podcast_pipeline | Speaker detection processed 66900 frames for 20260403_recording.mp4
+2026-05-17 23:13:34 | INFO | podcast_pipeline | Speaker detection processed 67050 frames for 20260403_recording.mp4
+2026-05-17 23:13:34 | INFO | podcast_pipeline | Speaker detection processed 67200 frames for 20260403_recording.mp4
+2026-05-17 23:13:35 | INFO | podcast_pipeline | Speaker detection processed 67350 frames for 20260403_recording.mp4
+2026-05-17 23:13:35 | INFO | podcast_pipeline | Speaker detection processed 67500 frames for 20260403_recording.mp4
+2026-05-17 23:13:36 | INFO | podcast_pipeline | Speaker detection processed 67650 frames for 20260403_recording.mp4
+2026-05-17 23:13:36 | INFO | podcast_pipeline | Speaker detection processed 67800 frames for 20260403_recording.mp4
+2026-05-17 23:13:37 | INFO | podcast_pipeline | Speaker detection processed 67950 frames for 20260403_recording.mp4
+2026-05-17 23:13:37 | INFO | podcast_pipeline | Speaker detection processed 68100 frames for 20260403_recording.mp4
+2026-05-17 23:13:38 | INFO | podcast_pipeline | Speaker detection processed 68250 frames for 20260403_recording.mp4
+2026-05-17 23:13:38 | INFO | podcast_pipeline | Speaker detection processed 68400 frames for 20260403_recording.mp4
+2026-05-17 23:13:39 | INFO | podcast_pipeline | Speaker detection processed 68550 frames for 20260403_recording.mp4
+2026-05-17 23:13:39 | INFO | podcast_pipeline | Speaker detection processed 68700 frames for 20260403_recording.mp4
+2026-05-17 23:13:40 | INFO | podcast_pipeline | Speaker detection processed 68850 frames for 20260403_recording.mp4
+2026-05-17 23:13:40 | INFO | podcast_pipeline | Speaker detection processed 69000 frames for 20260403_recording.mp4
+2026-05-17 23:13:41 | INFO | podcast_pipeline | Speaker detection processed 69150 frames for 20260403_recording.mp4
+2026-05-17 23:13:41 | INFO | podcast_pipeline | Speaker detection processed 69300 frames for 20260403_recording.mp4
+2026-05-17 23:13:42 | INFO | podcast_pipeline | Speaker detection processed 69450 frames for 20260403_recording.mp4
+2026-05-17 23:13:42 | INFO | podcast_pipeline | Speaker detection processed 69600 frames for 20260403_recording.mp4
+2026-05-17 23:13:43 | INFO | podcast_pipeline | Speaker detection processed 69750 frames for 20260403_recording.mp4
+2026-05-17 23:13:43 | INFO | podcast_pipeline | Speaker detection processed 69900 frames for 20260403_recording.mp4
+2026-05-17 23:13:44 | INFO | podcast_pipeline | Speaker detection processed 70050 frames for 20260403_recording.mp4
+2026-05-17 23:13:44 | INFO | podcast_pipeline | Speaker detection processed 70200 frames for 20260403_recording.mp4
+2026-05-17 23:13:45 | INFO | podcast_pipeline | Speaker detection processed 70350 frames for 20260403_recording.mp4
+2026-05-17 23:13:45 | INFO | podcast_pipeline | Speaker detection processed 70500 frames for 20260403_recording.mp4
+2026-05-17 23:13:46 | INFO | podcast_pipeline | Speaker detection processed 70650 frames for 20260403_recording.mp4
+2026-05-17 23:13:46 | INFO | podcast_pipeline | Speaker detection processed 70800 frames for 20260403_recording.mp4
+2026-05-17 23:13:47 | INFO | podcast_pipeline | Speaker detection processed 70950 frames for 20260403_recording.mp4
+2026-05-17 23:13:47 | INFO | podcast_pipeline | Speaker detection processed 71100 frames for 20260403_recording.mp4
+2026-05-17 23:13:48 | INFO | podcast_pipeline | Speaker detection processed 71250 frames for 20260403_recording.mp4
+2026-05-17 23:13:48 | INFO | podcast_pipeline | Speaker detection processed 71400 frames for 20260403_recording.mp4
+2026-05-17 23:13:49 | INFO | podcast_pipeline | Speaker detection processed 71550 frames for 20260403_recording.mp4
+2026-05-17 23:17:32 | INFO | podcast_pipeline | Speaker detection output written: /Users/niserg/Desktop/metaverse/podcast_pipeline/outputs/20260403_recording_annotated.mp4
+2026-05-17 23:17:32 | INFO | podcast_pipeline | Pipeline complete. Final outputs: ['/Users/niserg/Desktop/metaverse/podcast_pipeline/outputs/20260403_recording_annotated.mp4']
+2026-05-23 19:49:10 | INFO | podcast_pipeline | Using FFmpeg video encoder: h264_videotoolbox
+2026-05-23 19:49:10 | INFO | podcast_pipeline | Using FFmpeg video encoder: h264_videotoolbox
+2026-05-23 19:49:10 | WARNING | podcast_pipeline | MediaPipe installed without solutions API. Falling back to Haar cascade detector.
+2026-05-23 19:49:10 | INFO | podcast_pipeline | Face detector initialized: haar
+2026-05-23 19:49:10 | WARNING | podcast_pipeline | MediaPipe FaceMesh unavailable. Using ROI-based lip movement fallback.
+2026-05-23 19:49:10 | INFO | podcast_pipeline | Starting ingest pipeline.
+2026-05-23 19:49:10 | INFO | podcast_pipeline | Validated video asset: /Users/niserg/Desktop/metaverse/podcast_pipeline/input/test3min.mp4
+2026-05-23 19:49:10 | INFO | podcast_pipeline | Metadata for test3min.mp4: {'fps': 25.0, 'resolution': {'width': 1512, 'height': 950}, 'codec': 'h264', 'duration_sec': 180.0, 'frame_count': 4500}
+2026-05-23 19:49:10 | INFO | podcast_pipeline | Organized video -> /Users/niserg/Desktop/metaverse/podcast_pipeline/raw/video/test3min.mp4
+2026-05-23 19:49:10 | INFO | podcast_pipeline | Ingest complete: 1 videos, 0 audio, 0 overlays.
+2026-05-23 19:49:27 | INFO | podcast_pipeline | Normalized FPS: test3min.mp4 -> test3min_fps.mp4
+2026-05-23 19:49:38 | INFO | podcast_pipeline | Resized video: test3min_fps.mp4 -> test3min_resized.mp4
+2026-05-23 19:49:44 | INFO | podcast_pipeline | Normalized audio: test3min_resized.mp4 -> test3min_audio_norm.mp4
+2026-05-23 19:49:46 | INFO | podcast_pipeline | Generated proxy: test3min_proxy.mp4
+2026-05-23 19:49:48 | INFO | podcast_pipeline | Extracted 540 frames from test3min_audio_norm.mp4
+2026-05-23 19:49:48 | INFO | podcast_pipeline | Preprocessing complete. Processed=1, Proxies=1
+2026-05-23 19:49:50 | INFO | podcast_pipeline | Speaker detection processed 150 frames for test3min_audio_norm.mp4
+2026-05-23 19:49:52 | INFO | podcast_pipeline | Speaker detection processed 300 frames for test3min_audio_norm.mp4
+2026-05-23 19:49:54 | INFO | podcast_pipeline | Speaker detection processed 450 frames for test3min_audio_norm.mp4
+2026-05-23 19:49:56 | INFO | podcast_pipeline | Speaker detection processed 600 frames for test3min_audio_norm.mp4
+2026-05-23 19:49:57 | INFO | podcast_pipeline | Speaker detection processed 750 frames for test3min_audio_norm.mp4
+2026-05-23 19:49:59 | INFO | podcast_pipeline | Speaker detection processed 900 frames for test3min_audio_norm.mp4
+2026-05-23 19:50:01 | INFO | podcast_pipeline | Speaker detection processed 1050 frames for test3min_audio_norm.mp4
+2026-05-23 19:50:03 | INFO | podcast_pipeline | Speaker detection processed 1200 frames for test3min_audio_norm.mp4
+2026-05-23 19:50:05 | INFO | podcast_pipeline | Speaker detection processed 1350 frames for test3min_audio_norm.mp4
+2026-05-23 19:50:07 | INFO | podcast_pipeline | Speaker detection processed 1500 frames for test3min_audio_norm.mp4
+2026-05-23 19:50:09 | INFO | podcast_pipeline | Speaker detection processed 1650 frames for test3min_audio_norm.mp4
+2026-05-23 19:50:11 | INFO | podcast_pipeline | Speaker detection processed 1800 frames for test3min_audio_norm.mp4
+2026-05-23 19:50:13 | INFO | podcast_pipeline | Speaker detection processed 1950 frames for test3min_audio_norm.mp4
+2026-05-23 19:50:14 | INFO | podcast_pipeline | Speaker detection processed 2100 frames for test3min_audio_norm.mp4
+2026-05-23 19:50:16 | INFO | podcast_pipeline | Speaker detection processed 2250 frames for test3min_audio_norm.mp4
+2026-05-23 19:50:18 | INFO | podcast_pipeline | Speaker detection processed 2400 frames for test3min_audio_norm.mp4
+2026-05-23 19:50:20 | INFO | podcast_pipeline | Speaker detection processed 2550 frames for test3min_audio_norm.mp4
+2026-05-23 19:50:22 | INFO | podcast_pipeline | Speaker detection processed 2700 frames for test3min_audio_norm.mp4
+2026-05-23 19:50:23 | INFO | podcast_pipeline | Speaker detection processed 2850 frames for test3min_audio_norm.mp4
+2026-05-23 19:50:25 | INFO | podcast_pipeline | Speaker detection processed 3000 frames for test3min_audio_norm.mp4
+2026-05-23 19:50:27 | INFO | podcast_pipeline | Speaker detection processed 3150 frames for test3min_audio_norm.mp4
+2026-05-23 19:50:29 | INFO | podcast_pipeline | Speaker detection processed 3300 frames for test3min_audio_norm.mp4
+2026-05-23 19:50:30 | INFO | podcast_pipeline | Speaker detection processed 3450 frames for test3min_audio_norm.mp4
+2026-05-23 19:50:32 | INFO | podcast_pipeline | Speaker detection processed 3600 frames for test3min_audio_norm.mp4
+2026-05-23 19:50:34 | INFO | podcast_pipeline | Speaker detection processed 3750 frames for test3min_audio_norm.mp4
+2026-05-23 19:50:35 | INFO | podcast_pipeline | Speaker detection processed 3900 frames for test3min_audio_norm.mp4
+2026-05-23 19:50:37 | INFO | podcast_pipeline | Speaker detection processed 4050 frames for test3min_audio_norm.mp4
+2026-05-23 19:50:39 | INFO | podcast_pipeline | Speaker detection processed 4200 frames for test3min_audio_norm.mp4
+2026-05-23 19:50:41 | INFO | podcast_pipeline | Speaker detection processed 4350 frames for test3min_audio_norm.mp4
+2026-05-23 19:50:43 | INFO | podcast_pipeline | Speaker detection processed 4500 frames for test3min_audio_norm.mp4
+2026-05-23 19:50:44 | INFO | podcast_pipeline | Speaker detection processed 4650 frames for test3min_audio_norm.mp4
+2026-05-23 19:50:46 | INFO | podcast_pipeline | Speaker detection processed 4800 frames for test3min_audio_norm.mp4
+2026-05-23 19:50:48 | INFO | podcast_pipeline | Speaker detection processed 4950 frames for test3min_audio_norm.mp4
+2026-05-23 19:50:50 | INFO | podcast_pipeline | Speaker detection processed 5100 frames for test3min_audio_norm.mp4
+2026-05-23 19:50:52 | INFO | podcast_pipeline | Speaker detection processed 5250 frames for test3min_audio_norm.mp4
+2026-05-23 19:50:54 | INFO | podcast_pipeline | Speaker detection processed 5400 frames for test3min_audio_norm.mp4
+2026-05-23 19:51:05 | INFO | podcast_pipeline | Speaker detection output written: /Users/niserg/Desktop/metaverse/podcast_pipeline/outputs/test3min_audio_norm_annotated.mp4
+2026-05-23 19:51:05 | INFO | podcast_pipeline | Pipeline complete. Final outputs: ['/Users/niserg/Desktop/metaverse/podcast_pipeline/outputs/test3min_audio_norm_annotated.mp4']
+2026-05-23 20:03:33 | INFO | podcast_pipeline | Using FFmpeg video encoder: libx264
+2026-05-23 20:03:33 | INFO | podcast_pipeline | Using FFmpeg video encoder: libx264
+2026-05-23 20:03:33 | WARNING | podcast_pipeline | MediaPipe installed without solutions API. Falling back to Haar cascade detector.
+2026-05-23 20:03:33 | INFO | podcast_pipeline | Face detector initialized: haar
+2026-05-23 20:03:33 | WARNING | podcast_pipeline | MediaPipe FaceMesh unavailable. Using ROI-based lip movement fallback.
+2026-05-23 20:03:33 | INFO | podcast_pipeline | Starting ingest pipeline.
+2026-05-23 20:03:34 | INFO | podcast_pipeline | Validated video asset: /Users/niserg/Desktop/metaverse/podcast_pipeline/input/test3min.mp4
+2026-05-23 20:03:34 | INFO | podcast_pipeline | Metadata for test3min.mp4: {'fps': 25.0, 'resolution': {'width': 1512, 'height': 950}, 'codec': 'h264', 'duration_sec': 180.0, 'frame_count': 4500}
+2026-05-23 20:03:34 | INFO | podcast_pipeline | Organized video -> /Users/niserg/Desktop/metaverse/podcast_pipeline/raw/video/test3min.mp4
+2026-05-23 20:03:34 | INFO | podcast_pipeline | Ingest complete: 1 videos, 0 audio, 0 overlays.
+2026-05-23 20:04:24 | INFO | podcast_pipeline | Normalized FPS: test3min.mp4 -> test3min_fps.mp4
+2026-05-23 20:04:59 | INFO | podcast_pipeline | Resized video: test3min_fps.mp4 -> test3min_resized.mp4
+2026-05-23 20:05:05 | INFO | podcast_pipeline | Normalized audio: test3min_resized.mp4 -> test3min_audio_norm.mp4
+2026-05-23 20:05:07 | INFO | podcast_pipeline | Generated proxy: test3min_proxy.mp4
+2026-05-23 20:05:09 | INFO | podcast_pipeline | Extracted 540 frames from test3min_audio_norm.mp4
+2026-05-23 20:05:09 | INFO | podcast_pipeline | Preprocessing complete. Processed=1, Proxies=1
+2026-05-23 20:05:13 | INFO | podcast_pipeline | Speaker detection processed 150 frames for test3min_audio_norm.mp4
+2026-05-23 20:05:16 | INFO | podcast_pipeline | Speaker detection processed 300 frames for test3min_audio_norm.mp4
+2026-05-23 20:05:19 | INFO | podcast_pipeline | Speaker detection processed 450 frames for test3min_audio_norm.mp4
+2026-05-23 20:05:23 | INFO | podcast_pipeline | Speaker detection processed 600 frames for test3min_audio_norm.mp4
+2026-05-23 20:05:26 | INFO | podcast_pipeline | Speaker detection processed 750 frames for test3min_audio_norm.mp4
+2026-05-23 20:05:29 | INFO | podcast_pipeline | Speaker detection processed 900 frames for test3min_audio_norm.mp4
+2026-05-23 20:05:33 | INFO | podcast_pipeline | Speaker detection processed 1050 frames for test3min_audio_norm.mp4
+2026-05-23 20:05:36 | INFO | podcast_pipeline | Speaker detection processed 1200 frames for test3min_audio_norm.mp4
+2026-05-23 20:05:39 | INFO | podcast_pipeline | Speaker detection processed 1350 frames for test3min_audio_norm.mp4
+2026-05-23 20:05:42 | INFO | podcast_pipeline | Speaker detection processed 1500 frames for test3min_audio_norm.mp4
+2026-05-23 20:05:45 | INFO | podcast_pipeline | Speaker detection processed 1650 frames for test3min_audio_norm.mp4
+2026-05-23 20:05:48 | INFO | podcast_pipeline | Speaker detection processed 1800 frames for test3min_audio_norm.mp4
+2026-05-23 20:05:51 | INFO | podcast_pipeline | Speaker detection processed 1950 frames for test3min_audio_norm.mp4
+2026-05-23 20:05:54 | INFO | podcast_pipeline | Speaker detection processed 2100 frames for test3min_audio_norm.mp4
+2026-05-23 20:05:57 | INFO | podcast_pipeline | Speaker detection processed 2250 frames for test3min_audio_norm.mp4
+2026-05-23 20:06:00 | INFO | podcast_pipeline | Speaker detection processed 2400 frames for test3min_audio_norm.mp4
+2026-05-23 20:06:03 | INFO | podcast_pipeline | Speaker detection processed 2550 frames for test3min_audio_norm.mp4
+2026-05-23 20:06:06 | INFO | podcast_pipeline | Speaker detection processed 2700 frames for test3min_audio_norm.mp4
+2026-05-23 20:06:09 | INFO | podcast_pipeline | Speaker detection processed 2850 frames for test3min_audio_norm.mp4
+2026-05-23 20:06:13 | INFO | podcast_pipeline | Speaker detection processed 3000 frames for test3min_audio_norm.mp4
+2026-05-23 20:06:16 | INFO | podcast_pipeline | Speaker detection processed 3150 frames for test3min_audio_norm.mp4
+2026-05-23 20:06:19 | INFO | podcast_pipeline | Speaker detection processed 3300 frames for test3min_audio_norm.mp4
+2026-05-23 20:06:22 | INFO | podcast_pipeline | Speaker detection processed 3450 frames for test3min_audio_norm.mp4
+2026-05-23 20:06:25 | INFO | podcast_pipeline | Speaker detection processed 3600 frames for test3min_audio_norm.mp4
+2026-05-23 20:06:28 | INFO | podcast_pipeline | Speaker detection processed 3750 frames for test3min_audio_norm.mp4
+2026-05-23 20:06:31 | INFO | podcast_pipeline | Speaker detection processed 3900 frames for test3min_audio_norm.mp4
+2026-05-23 20:06:34 | INFO | podcast_pipeline | Speaker detection processed 4050 frames for test3min_audio_norm.mp4
+2026-05-23 20:06:38 | INFO | podcast_pipeline | Speaker detection processed 4200 frames for test3min_audio_norm.mp4
+2026-05-23 20:06:41 | INFO | podcast_pipeline | Speaker detection processed 4350 frames for test3min_audio_norm.mp4
+2026-05-23 20:06:44 | INFO | podcast_pipeline | Speaker detection processed 4500 frames for test3min_audio_norm.mp4
+2026-05-23 20:06:47 | INFO | podcast_pipeline | Speaker detection processed 4650 frames for test3min_audio_norm.mp4
+2026-05-23 20:06:50 | INFO | podcast_pipeline | Speaker detection processed 4800 frames for test3min_audio_norm.mp4
+2026-05-23 20:06:53 | INFO | podcast_pipeline | Speaker detection processed 4950 frames for test3min_audio_norm.mp4
+2026-05-23 20:06:56 | INFO | podcast_pipeline | Speaker detection processed 5100 frames for test3min_audio_norm.mp4
+2026-05-23 20:06:59 | INFO | podcast_pipeline | Speaker detection processed 5250 frames for test3min_audio_norm.mp4
+2026-05-23 20:07:02 | INFO | podcast_pipeline | Speaker detection processed 5400 frames for test3min_audio_norm.mp4
+2026-05-23 20:07:52 | INFO | podcast_pipeline | Speaker detection output written: /Users/niserg/Desktop/metaverse/podcast_pipeline/outputs/test3min_audio_norm_annotated.mp4
+2026-05-23 20:07:52 | INFO | podcast_pipeline | Pipeline complete. Final outputs: ['/Users/niserg/Desktop/metaverse/podcast_pipeline/outputs/test3min_audio_norm_annotated.mp4']
+2026-05-23 21:51:19 | INFO | podcast_pipeline | Using FFmpeg video encoder: libx264
+2026-05-23 21:51:19 | INFO | podcast_pipeline | Using FFmpeg video encoder: libx264
+2026-05-23 21:51:19 | WARNING | podcast_pipeline | MediaPipe installed without solutions API. Falling back to Haar cascade detector.
+2026-05-23 21:51:19 | INFO | podcast_pipeline | Face detector initialized: haar
+2026-05-23 21:51:19 | WARNING | podcast_pipeline | MediaPipe FaceMesh unavailable. Using ROI-based lip movement fallback.
+2026-05-23 21:51:19 | INFO | podcast_pipeline | Starting ingest pipeline.
+2026-05-23 21:51:19 | INFO | podcast_pipeline | Validated video asset: /Users/niserg/Desktop/metaverse/podcast_pipeline/input/test3min.mp4
+2026-05-23 21:51:19 | INFO | podcast_pipeline | Metadata for test3min.mp4: {'fps': 25.0, 'resolution': {'width': 1512, 'height': 950}, 'codec': 'h264', 'duration_sec': 180.0, 'frame_count': 4500}
+2026-05-23 21:51:19 | INFO | podcast_pipeline | Organized video -> /Users/niserg/Desktop/metaverse/podcast_pipeline/raw/video/test3min.mp4
+2026-05-23 21:51:19 | INFO | podcast_pipeline | Ingest complete: 1 videos, 0 audio, 0 overlays.
+2026-05-23 21:52:11 | INFO | podcast_pipeline | Normalized FPS: test3min.mp4 -> test3min_fps.mp4
+2026-05-23 21:52:48 | INFO | podcast_pipeline | Resized video: test3min_fps.mp4 -> test3min_resized.mp4
+2026-05-23 21:52:54 | INFO | podcast_pipeline | Normalized audio: test3min_resized.mp4 -> test3min_audio_norm.mp4
+2026-05-23 21:52:56 | INFO | podcast_pipeline | Generated proxy: test3min_proxy.mp4
+2026-05-23 21:52:58 | INFO | podcast_pipeline | Extracted 540 frames from test3min_audio_norm.mp4
+2026-05-23 21:52:58 | INFO | podcast_pipeline | Preprocessing complete. Processed=1, Proxies=1
+2026-05-23 21:53:24 | INFO | podcast_pipeline | Speaker detection processed 150 frames for test3min_audio_norm.mp4
+2026-05-23 21:53:52 | INFO | podcast_pipeline | Speaker detection processed 300 frames for test3min_audio_norm.mp4
+2026-05-23 21:54:16 | INFO | podcast_pipeline | Speaker detection processed 450 frames for test3min_audio_norm.mp4
+2026-05-23 21:54:42 | INFO | podcast_pipeline | Speaker detection processed 600 frames for test3min_audio_norm.mp4
+2026-05-23 21:55:01 | INFO | podcast_pipeline | Speaker detection processed 750 frames for test3min_audio_norm.mp4
+2026-05-23 21:55:20 | INFO | podcast_pipeline | Speaker detection processed 900 frames for test3min_audio_norm.mp4
+2026-05-23 21:55:37 | INFO | podcast_pipeline | Speaker detection processed 1050 frames for test3min_audio_norm.mp4
+2026-05-23 21:55:55 | INFO | podcast_pipeline | Speaker detection processed 1200 frames for test3min_audio_norm.mp4
+2026-05-23 21:56:09 | INFO | podcast_pipeline | Speaker detection processed 1350 frames for test3min_audio_norm.mp4
+2026-05-23 21:56:27 | INFO | podcast_pipeline | Speaker detection processed 1500 frames for test3min_audio_norm.mp4
+2026-05-23 21:57:02 | INFO | podcast_pipeline | Speaker detection processed 1650 frames for test3min_audio_norm.mp4
+2026-05-23 21:57:28 | INFO | podcast_pipeline | Speaker detection processed 1800 frames for test3min_audio_norm.mp4
+2026-05-23 21:57:47 | INFO | podcast_pipeline | Speaker detection processed 1950 frames for test3min_audio_norm.mp4
+2026-05-23 21:58:02 | INFO | podcast_pipeline | Speaker detection processed 2100 frames for test3min_audio_norm.mp4
+2026-05-23 21:58:23 | INFO | podcast_pipeline | Speaker detection processed 2250 frames for test3min_audio_norm.mp4
+2026-05-23 21:58:42 | INFO | podcast_pipeline | Speaker detection processed 2400 frames for test3min_audio_norm.mp4
+2026-05-23 21:59:08 | INFO | podcast_pipeline | Speaker detection processed 2550 frames for test3min_audio_norm.mp4
+2026-05-23 21:59:25 | INFO | podcast_pipeline | Speaker detection processed 2700 frames for test3min_audio_norm.mp4
+2026-05-23 21:59:38 | INFO | podcast_pipeline | Speaker detection processed 2850 frames for test3min_audio_norm.mp4
+2026-05-23 22:00:00 | INFO | podcast_pipeline | Speaker detection processed 3000 frames for test3min_audio_norm.mp4
+2026-05-23 22:00:30 | INFO | podcast_pipeline | Speaker detection processed 3150 frames for test3min_audio_norm.mp4
+2026-05-23 22:01:02 | INFO | podcast_pipeline | Speaker detection processed 3300 frames for test3min_audio_norm.mp4
+2026-05-23 22:01:29 | INFO | podcast_pipeline | Speaker detection processed 3450 frames for test3min_audio_norm.mp4
+2026-05-23 22:01:55 | INFO | podcast_pipeline | Speaker detection processed 3600 frames for test3min_audio_norm.mp4
+2026-05-23 22:02:13 | INFO | podcast_pipeline | Speaker detection processed 3750 frames for test3min_audio_norm.mp4
+2026-05-23 22:02:29 | INFO | podcast_pipeline | Speaker detection processed 3900 frames for test3min_audio_norm.mp4
+2026-05-23 22:03:26 | INFO | podcast_pipeline | Using FFmpeg video encoder: libx264
+2026-05-23 22:03:26 | INFO | podcast_pipeline | Using FFmpeg video encoder: libx264
+2026-05-23 22:03:26 | WARNING | podcast_pipeline | MediaPipe installed without solutions API. Falling back to Haar cascade detector.
+2026-05-23 22:03:26 | INFO | podcast_pipeline | Face detector initialized: haar
+2026-05-23 22:03:26 | WARNING | podcast_pipeline | MediaPipe FaceMesh unavailable. Using ROI-based lip movement fallback.
+2026-05-23 22:03:26 | INFO | podcast_pipeline | Starting ingest pipeline.
+2026-05-23 22:03:27 | INFO | podcast_pipeline | Validated video asset: /Users/niserg/Desktop/metaverse/podcast_pipeline/input/test3min.mp4
+2026-05-23 22:03:27 | INFO | podcast_pipeline | Metadata for test3min.mp4: {'fps': 25.0, 'resolution': {'width': 1512, 'height': 950}, 'codec': 'h264', 'duration_sec': 180.0, 'frame_count': 4500}
+2026-05-23 22:03:27 | INFO | podcast_pipeline | Organized video -> /Users/niserg/Desktop/metaverse/podcast_pipeline/raw/video/test3min.mp4
+2026-05-23 22:03:27 | INFO | podcast_pipeline | Ingest complete: 1 videos, 0 audio, 0 overlays.
+2026-05-23 22:04:21 | INFO | podcast_pipeline | Normalized FPS: test3min.mp4 -> test3min_fps.mp4
+2026-05-23 22:04:59 | INFO | podcast_pipeline | Resized video: test3min_fps.mp4 -> test3min_resized.mp4
+2026-05-23 22:05:05 | INFO | podcast_pipeline | Normalized audio: test3min_resized.mp4 -> test3min_audio_norm.mp4
+2026-05-23 22:05:07 | INFO | podcast_pipeline | Generated proxy: test3min_proxy.mp4
+2026-05-23 22:05:10 | INFO | podcast_pipeline | Extracted 540 frames from test3min_audio_norm.mp4
+2026-05-23 22:05:10 | INFO | podcast_pipeline | Preprocessing complete. Processed=1, Proxies=1
+2026-05-23 22:05:36 | INFO | podcast_pipeline | Speaker detection processed 150 frames for test3min_audio_norm.mp4
+2026-05-23 22:06:05 | INFO | podcast_pipeline | Speaker detection processed 300 frames for test3min_audio_norm.mp4
+2026-05-23 22:06:30 | INFO | podcast_pipeline | Speaker detection processed 450 frames for test3min_audio_norm.mp4
+2026-05-23 22:06:56 | INFO | podcast_pipeline | Speaker detection processed 600 frames for test3min_audio_norm.mp4
+2026-05-23 22:07:16 | INFO | podcast_pipeline | Speaker detection processed 750 frames for test3min_audio_norm.mp4
+2026-05-23 22:07:35 | INFO | podcast_pipeline | Speaker detection processed 900 frames for test3min_audio_norm.mp4
+2026-05-23 22:07:52 | INFO | podcast_pipeline | Speaker detection processed 1050 frames for test3min_audio_norm.mp4
+2026-05-23 22:08:10 | INFO | podcast_pipeline | Speaker detection processed 1200 frames for test3min_audio_norm.mp4
+2026-05-23 22:08:25 | INFO | podcast_pipeline | Speaker detection processed 1350 frames for test3min_audio_norm.mp4
+2026-05-23 22:08:43 | INFO | podcast_pipeline | Speaker detection processed 1500 frames for test3min_audio_norm.mp4
+2026-05-23 22:09:18 | INFO | podcast_pipeline | Speaker detection processed 1650 frames for test3min_audio_norm.mp4
+2026-05-23 22:09:44 | INFO | podcast_pipeline | Speaker detection processed 1800 frames for test3min_audio_norm.mp4
+2026-05-23 22:10:03 | INFO | podcast_pipeline | Speaker detection processed 1950 frames for test3min_audio_norm.mp4
+2026-05-23 22:10:19 | INFO | podcast_pipeline | Speaker detection processed 2100 frames for test3min_audio_norm.mp4
+2026-05-23 22:10:40 | INFO | podcast_pipeline | Speaker detection processed 2250 frames for test3min_audio_norm.mp4
+2026-05-23 22:10:59 | INFO | podcast_pipeline | Speaker detection processed 2400 frames for test3min_audio_norm.mp4
+2026-05-23 22:11:25 | INFO | podcast_pipeline | Speaker detection processed 2550 frames for test3min_audio_norm.mp4
+2026-05-23 22:11:43 | INFO | podcast_pipeline | Speaker detection processed 2700 frames for test3min_audio_norm.mp4
+2026-05-23 22:11:56 | INFO | podcast_pipeline | Speaker detection processed 2850 frames for test3min_audio_norm.mp4
+2026-05-23 22:12:19 | INFO | podcast_pipeline | Speaker detection processed 3000 frames for test3min_audio_norm.mp4
+2026-05-23 22:12:49 | INFO | podcast_pipeline | Speaker detection processed 3150 frames for test3min_audio_norm.mp4
+2026-05-23 22:13:22 | INFO | podcast_pipeline | Speaker detection processed 3300 frames for test3min_audio_norm.mp4
+2026-05-23 22:13:49 | INFO | podcast_pipeline | Speaker detection processed 3450 frames for test3min_audio_norm.mp4
+2026-05-23 22:14:16 | INFO | podcast_pipeline | Speaker detection processed 3600 frames for test3min_audio_norm.mp4
+2026-05-23 22:14:35 | INFO | podcast_pipeline | Speaker detection processed 3750 frames for test3min_audio_norm.mp4
+2026-05-23 22:14:51 | INFO | podcast_pipeline | Speaker detection processed 3900 frames for test3min_audio_norm.mp4
+2026-05-23 22:15:09 | INFO | podcast_pipeline | Speaker detection processed 4050 frames for test3min_audio_norm.mp4
+2026-05-23 22:15:29 | INFO | podcast_pipeline | Speaker detection processed 4200 frames for test3min_audio_norm.mp4
+2026-05-23 22:15:40 | INFO | podcast_pipeline | Speaker detection processed 4350 frames for test3min_audio_norm.mp4
+2026-05-23 22:15:52 | INFO | podcast_pipeline | Speaker detection processed 4500 frames for test3min_audio_norm.mp4
+2026-05-23 22:16:16 | INFO | podcast_pipeline | Speaker detection processed 4650 frames for test3min_audio_norm.mp4
+2026-05-23 22:16:39 | INFO | podcast_pipeline | Speaker detection processed 4800 frames for test3min_audio_norm.mp4
+2026-05-23 22:16:57 | INFO | podcast_pipeline | Speaker detection processed 4950 frames for test3min_audio_norm.mp4
+2026-05-23 22:17:09 | INFO | podcast_pipeline | Speaker detection processed 5100 frames for test3min_audio_norm.mp4
+2026-05-23 22:17:21 | INFO | podcast_pipeline | Speaker detection processed 5250 frames for test3min_audio_norm.mp4
+2026-05-23 22:17:42 | INFO | podcast_pipeline | Speaker detection processed 5400 frames for test3min_audio_norm.mp4
+2026-05-23 22:18:45 | INFO | podcast_pipeline | Speaker detection output written: /Users/niserg/Desktop/metaverse/podcast_pipeline/outputs/test3min_audio_norm_annotated.mp4
+2026-05-23 22:18:45 | INFO | podcast_pipeline | Pipeline complete. Final outputs: ['/Users/niserg/Desktop/metaverse/podcast_pipeline/outputs/test3min_audio_norm_annotated.mp4']
+2026-05-23 22:21:48 | INFO | podcast_pipeline | Using FFmpeg video encoder: h264_videotoolbox
+2026-05-23 22:21:48 | INFO | podcast_pipeline | Using FFmpeg video encoder: h264_videotoolbox
+2026-05-23 22:21:48 | INFO | podcast_pipeline | Face detector initialized: mediapipe
+2026-05-23 22:21:48 | INFO | podcast_pipeline | Starting ingest pipeline.
+2026-05-23 22:21:48 | INFO | podcast_pipeline | Validated video asset: /Users/niserg/Desktop/metaverse/podcast_pipeline/input/test3min.mp4
+2026-05-23 22:21:48 | INFO | podcast_pipeline | Metadata for test3min.mp4: {'fps': 25.0, 'resolution': {'width': 1512, 'height': 950}, 'codec': 'h264', 'duration_sec': 180.0, 'frame_count': 4500}
+2026-05-23 22:21:48 | INFO | podcast_pipeline | Organized video -> /Users/niserg/Desktop/metaverse/podcast_pipeline/raw/video/test3min.mp4
+2026-05-23 22:21:48 | INFO | podcast_pipeline | Ingest complete: 1 videos, 0 audio, 0 overlays.
+2026-05-23 22:22:06 | INFO | podcast_pipeline | Normalized FPS: test3min.mp4 -> test3min_fps.mp4
+2026-05-23 22:22:18 | INFO | podcast_pipeline | Resized video: test3min_fps.mp4 -> test3min_resized.mp4
+2026-05-23 22:22:24 | INFO | podcast_pipeline | Normalized audio: test3min_resized.mp4 -> test3min_audio_norm.mp4
+2026-05-23 22:22:26 | INFO | podcast_pipeline | Generated proxy: test3min_proxy.mp4
+2026-05-23 22:22:29 | INFO | podcast_pipeline | Extracted 540 frames from test3min_audio_norm.mp4
+2026-05-23 22:22:29 | INFO | podcast_pipeline | Preprocessing complete. Processed=1, Proxies=1
+2026-05-23 22:22:42 | INFO | podcast_pipeline | Speaker detection processed 150 frames for test3min_audio_norm.mp4
+2026-05-23 22:23:06 | INFO | podcast_pipeline | Speaker detection processed 300 frames for test3min_audio_norm.mp4
+2026-05-23 22:23:29 | INFO | podcast_pipeline | Speaker detection processed 450 frames for test3min_audio_norm.mp4
+2026-05-23 22:23:50 | INFO | podcast_pipeline | Speaker detection processed 600 frames for test3min_audio_norm.mp4
+2026-05-23 22:24:28 | INFO | podcast_pipeline | Speaker detection processed 750 frames for test3min_audio_norm.mp4
+2026-05-23 22:24:51 | INFO | podcast_pipeline | Speaker detection processed 900 frames for test3min_audio_norm.mp4
+2026-05-23 22:25:22 | INFO | podcast_pipeline | Speaker detection processed 1050 frames for test3min_audio_norm.mp4
+2026-05-23 22:25:55 | INFO | podcast_pipeline | Speaker detection processed 1200 frames for test3min_audio_norm.mp4
+2026-05-23 22:26:25 | INFO | podcast_pipeline | Speaker detection processed 1350 frames for test3min_audio_norm.mp4
+2026-05-23 22:26:54 | INFO | podcast_pipeline | Speaker detection processed 1500 frames for test3min_audio_norm.mp4
+2026-05-23 22:27:28 | INFO | podcast_pipeline | Speaker detection processed 1650 frames for test3min_audio_norm.mp4
+2026-05-23 22:27:57 | INFO | podcast_pipeline | Speaker detection processed 1800 frames for test3min_audio_norm.mp4
+2026-05-23 22:28:22 | INFO | podcast_pipeline | Speaker detection processed 1950 frames for test3min_audio_norm.mp4
+2026-05-23 22:28:35 | INFO | podcast_pipeline | Speaker detection processed 2100 frames for test3min_audio_norm.mp4
+2026-05-23 22:28:51 | INFO | podcast_pipeline | Speaker detection processed 2250 frames for test3min_audio_norm.mp4
+2026-05-23 22:29:12 | INFO | podcast_pipeline | Speaker detection processed 2400 frames for test3min_audio_norm.mp4
+2026-05-23 22:29:40 | INFO | podcast_pipeline | Speaker detection processed 2550 frames for test3min_audio_norm.mp4
+2026-05-23 22:30:10 | INFO | podcast_pipeline | Speaker detection processed 2700 frames for test3min_audio_norm.mp4
+2026-05-23 22:30:38 | INFO | podcast_pipeline | Speaker detection processed 2850 frames for test3min_audio_norm.mp4
+2026-05-23 22:31:04 | INFO | podcast_pipeline | Speaker detection processed 3000 frames for test3min_audio_norm.mp4
+2026-05-23 22:31:27 | INFO | podcast_pipeline | Speaker detection processed 3150 frames for test3min_audio_norm.mp4
+2026-05-23 22:32:01 | INFO | podcast_pipeline | Speaker detection processed 3300 frames for test3min_audio_norm.mp4
+2026-05-23 22:32:33 | INFO | podcast_pipeline | Speaker detection processed 3450 frames for test3min_audio_norm.mp4
+2026-05-23 22:33:08 | INFO | podcast_pipeline | Speaker detection processed 3600 frames for test3min_audio_norm.mp4
+2026-05-23 22:33:37 | INFO | podcast_pipeline | Speaker detection processed 3750 frames for test3min_audio_norm.mp4
+2026-05-23 22:34:05 | INFO | podcast_pipeline | Speaker detection processed 3900 frames for test3min_audio_norm.mp4
+2026-05-23 22:34:29 | INFO | podcast_pipeline | Speaker detection processed 4050 frames for test3min_audio_norm.mp4
+2026-05-23 22:34:54 | INFO | podcast_pipeline | Speaker detection processed 4200 frames for test3min_audio_norm.mp4
+2026-05-23 22:35:22 | INFO | podcast_pipeline | Speaker detection processed 4350 frames for test3min_audio_norm.mp4
+2026-05-23 22:43:16 | INFO | podcast_pipeline | Speaker detection processed 4500 frames for test3min_audio_norm.mp4
+2026-05-23 22:43:41 | INFO | podcast_pipeline | Speaker detection processed 4650 frames for test3min_audio_norm.mp4
+2026-05-23 22:44:03 | INFO | podcast_pipeline | Speaker detection processed 4800 frames for test3min_audio_norm.mp4
+2026-05-23 22:44:22 | INFO | podcast_pipeline | Speaker detection processed 4950 frames for test3min_audio_norm.mp4
+2026-05-23 22:44:42 | INFO | podcast_pipeline | Speaker detection processed 5100 frames for test3min_audio_norm.mp4
+2026-05-23 22:45:04 | INFO | podcast_pipeline | Speaker detection processed 5250 frames for test3min_audio_norm.mp4
+2026-05-23 22:45:27 | INFO | podcast_pipeline | Speaker detection processed 5400 frames for test3min_audio_norm.mp4
+2026-05-23 22:45:38 | INFO | podcast_pipeline | Speaker detection output written: /Users/niserg/Desktop/metaverse/podcast_pipeline/outputs/test3min_audio_norm_annotated.mp4
+2026-05-23 22:45:38 | INFO | podcast_pipeline | Pipeline complete. Final outputs: ['/Users/niserg/Desktop/metaverse/podcast_pipeline/outputs/test3min_audio_norm_annotated.mp4']
