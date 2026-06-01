@@ -26,7 +26,7 @@ class TwoPersonContourProcessor:
         self.mode_cfg = config.get("two_person_contour_mode", {})
         self.speaker_cfg = {**config.get("speaker_detection", {})}
 
-        # Allow image mode to override detector settings without touching main speaker config.
+        # Allow two-person contour mode to override detector settings without touching main speaker config.
         for key in ("detector_backend", "detection_confidence", "dnn_prototxt", "dnn_model", "min_face_size"):
             if key in self.mode_cfg:
                 self.speaker_cfg[key] = self.mode_cfg[key]

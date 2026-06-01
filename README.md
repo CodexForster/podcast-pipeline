@@ -110,7 +110,10 @@ Examples:
 For debugging on one image (two people conversing), run:
 
 ```bash
-python -m src.speaker_detection.two_person_contour_mode   --input-image /absolute/path/to/input.jpg   --output-image /absolute/path/to/output.jpg   --config config/config.yaml
+python -m src.speaker_detection.two_person_contour_mode \
+  --input-image /absolute/path/to/input.jpg \
+  --output-image /absolute/path/to/output.jpg \
+  --config config/config.yaml
 ```
 
 Tune behavior in `two_person_contour_mode` inside `config/config.yaml`.

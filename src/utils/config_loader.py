@@ -20,7 +20,7 @@ def load_config(config_path: str | Path) -> Dict[str, Any]:
 
 def _ensure_toggle_defaults(config: Dict[str, Any]) -> None:
     pipeline = config.setdefault("pipeline", {})
-    image_mode = config.setdefault("two_person_contour_mode", {})
+    two_person_mode = config.setdefault("two_person_contour_mode", {})
     ingest = pipeline.setdefault("ingest", {})
     preprocessing = pipeline.setdefault("preprocessing", {})
     speaker = pipeline.setdefault("speaker_detection", {})
@@ -71,5 +71,5 @@ def _ensure_toggle_defaults(config: Dict[str, Any]) -> None:
         "min_area": 1200,
     }
     for key, value in image_defaults.items():
-        image_mode.setdefault(key, value)
+        two_person_mode.setdefault(key, value)
 
