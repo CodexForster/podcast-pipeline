@@ -32,7 +32,7 @@ def _cfg(**overrides):
             "expand_x": 1.4,
             "expand_top": 0.35,
             "expand_bottom": 3.0,
-            "min_area": 10,
+            "min_area": 300,
         },
     }
     base["two_person_contour_mode"].update(overrides)
@@ -67,7 +67,7 @@ def test_warns_when_less_than_two_if_not_strict(caplog):
     detections = [FaceDetection((30, 30, 20, 20), 0.95)]
     processor = TwoPersonContourProcessor(_cfg(fail_on_less_than_two=False), logging.getLogger("t"), detector=StubDetector(detections))
 
-    with caplog.at_level("WARNING"):
+    with caplog.at_level(logging.WARNING):
         _, result = processor.process_frame(np.zeros((200, 300, 3), dtype=np.uint8))
 
     assert "Expected 2 people" in caplog.text
@@ -76,8 +76,8 @@ def test_warns_when_less_than_two_if_not_strict(caplog):
 
 def test_draws_two_contours_for_two_faces():
     detections = [
-        FaceDetection((40, 30, 28, 28), 0.9),
-        FaceDetection((150, 32, 30, 30), 0.88),
+        FaceDetection((40, 30, 48, 48), 0.9),
+        FaceDetection((170, 32, 50, 50), 0.88),
     ]
     processor = TwoPersonContourProcessor(_cfg(), logging.getLogger("t"), detector=StubDetector(detections))
 

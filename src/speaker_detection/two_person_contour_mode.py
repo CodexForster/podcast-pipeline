@@ -85,9 +85,9 @@ class TwoPersonContourProcessor:
         x, y, bw, bh = bbox
         cx = x + bw // 2
 
-        canvas = np.zeros((h, w), dtype=np.uint8)
+        body_mask = np.zeros((h, w), dtype=np.uint8)
         cv2.ellipse(
-            canvas,
+            body_mask,
             (cx, y + bh // 2),
             (max(8, int(0.65 * bw)), max(8, int(0.75 * bh))),
             0,
@@ -111,8 +111,8 @@ class TwoPersonContourProcessor:
             ],
             dtype=np.int32,
         )
-        cv2.fillPoly(canvas, [pts], 255)
-        contours, _ = cv2.findContours(canvas, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        cv2.fillPoly(body_mask, [pts], 255)
+        contours, _ = cv2.findContours(body_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
         if not contours:
             return None
         return max(contours, key=cv2.contourArea)
@@ -160,7 +160,11 @@ class TwoPersonContourProcessor:
         if roi.size == 0:
             return self._fallback_contour(frame_bgr.shape, face_bbox)
 
-        local_face = (face_bbox[0] - ex1, face_bbox[1] - ey1, face_bbox[2], face_bbox[3])
+        lx = max(0, face_bbox[0] - ex1)
+        ly = max(0, face_bbox[1] - ey1)
+        lw = max(2, min(roi.shape[1] - lx, face_bbox[2]))
+        lh = max(2, min(roi.shape[0] - ly, face_bbox[3]))
+        local_face = (lx, ly, lw, lh)
         fg_mask = self._mask_from_roi(roi, local_face)
 
         contours, _ = cv2.findContours(fg_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)

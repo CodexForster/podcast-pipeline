@@ -11,7 +11,7 @@ pipeline:
     generate_proxies: true
     extract_frames: true
     audio_normalization: true
-  
+
 two_person_contour_mode:
   enabled: false
   detector_backend: "mediapipe"

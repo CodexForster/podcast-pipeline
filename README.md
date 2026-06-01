@@ -103,8 +103,6 @@ Examples:
 - Lip activity and speaker identification are heuristic and can be affected by occlusion, profile faces, and low light.
 - This code is designed to be extended for later steps (auto-editing, shot selection, timeline generation).
 
-
-
 ## Single-Image Two-Person Contour Mode
 
 For debugging on one image (two people conversing), run:
