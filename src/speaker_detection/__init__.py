@@ -1,2 +1,2 @@
 from .speaker_pipeline import SpeakerDetectionPipeline
-
+from .two_person_contour_mode import TwoPersonContourProcessor, run_single_image_mode
