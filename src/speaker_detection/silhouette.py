@@ -21,6 +21,17 @@ class SilhouetteRenderer:
     Uses GrabCut-based mask extraction with a robust geometric fallback.
     """
 
+    _HEAD_X_RATIO = 0.7
+    _HEAD_Y_RATIO = 0.85
+    _SHOULDER_Y_RATIO = 1.15
+    _BOTTOM_Y_RATIO = 3.1
+    _TORSO_HALF_W_RATIO = 1.2
+    _NECK_X_RATIO = 0.8
+    _BOTTOM_X_RATIO = 0.9
+    _SHOULDER_SLOPE_RATIO = 0.35
+    _GATE_HEIGHT_RATIO = 3.2
+    _GATE_MIN_NONZERO_FACE_RATIO = 0.6
+
     def __init__(self, config: dict, logger) -> None:
         self.logger = logger
         self.enabled = bool(config.get("enabled", True))
@@ -245,7 +256,7 @@ class SilhouetteRenderer:
         cv2.ellipse(
             prior,
             (cx, y + bh // 2),
-            (max(4, int(0.7 * bw)), max(4, int(0.85 * bh))),
+            (max(4, int(self._HEAD_X_RATIO * bw)), max(4, int(self._HEAD_Y_RATIO * bh))),
             0,
             0,
             360,
@@ -253,17 +264,17 @@ class SilhouetteRenderer:
             -1,
         )
 
-        shoulder_y = min(h - 1, y + int(1.15 * bh))
-        bottom_y = min(h - 1, y + int(3.1 * bh))
-        torso_half_w = max(8, int(1.2 * bw))
+        shoulder_y = min(h - 1, y + int(self._SHOULDER_Y_RATIO * bh))
+        bottom_y = min(h - 1, y + int(self._BOTTOM_Y_RATIO * bh))
+        torso_half_w = max(8, int(self._TORSO_HALF_W_RATIO * bw))
         pts = np.array(
             [
-                [max(0, cx - int(0.8 * bw)), shoulder_y],
-                [max(0, cx - torso_half_w), min(h - 1, shoulder_y + int(0.35 * bh))],
-                [max(0, cx - int(0.9 * torso_half_w)), bottom_y],
-                [min(w - 1, cx + int(0.9 * torso_half_w)), bottom_y],
-                [min(w - 1, cx + torso_half_w), min(h - 1, shoulder_y + int(0.35 * bh))],
-                [min(w - 1, cx + int(0.8 * bw)), shoulder_y],
+                [max(0, cx - int(self._NECK_X_RATIO * bw)), shoulder_y],
+                [max(0, cx - torso_half_w), min(h - 1, shoulder_y + int(self._SHOULDER_SLOPE_RATIO * bh))],
+                [max(0, cx - int(self._BOTTOM_X_RATIO * torso_half_w)), bottom_y],
+                [min(w - 1, cx + int(self._BOTTOM_X_RATIO * torso_half_w)), bottom_y],
+                [min(w - 1, cx + torso_half_w), min(h - 1, shoulder_y + int(self._SHOULDER_SLOPE_RATIO * bh))],
+                [min(w - 1, cx + int(self._NECK_X_RATIO * bw)), shoulder_y],
             ],
             dtype=np.int32,
         )
@@ -275,12 +286,12 @@ class SilhouetteRenderer:
         gate_x1 = max(0, x - pad_x)
         gate_x2 = min(w, x + bw + pad_x)
         gate_y1 = max(0, y - pad_top)
-        gate_y2 = min(h, y + int(3.2 * bh) + pad_bottom)
+        gate_y2 = min(h, y + int(self._GATE_HEIGHT_RATIO * bh) + pad_bottom)
         cv2.rectangle(prior, (gate_x1, gate_y1), (max(gate_x1 + 2, gate_x2), max(gate_y1 + 2, gate_y2)), 255, -1)
 
         gated = cv2.bitwise_and(fg_mask, prior)
         gated[y : y + bh, x : x + bw] = cv2.bitwise_or(gated[y : y + bh, x : x + bw], fg_mask[y : y + bh, x : x + bw])
 
-        if cv2.countNonZero(gated) >= max(40, int(0.6 * bw * bh)):
+        if cv2.countNonZero(gated) >= max(40, int(self._GATE_MIN_NONZERO_FACE_RATIO * bw * bh)):
             return gated
         return fg_mask

@@ -21,6 +21,17 @@ class TwoPersonResult:
 
 
 class TwoPersonContourProcessor:
+    _HEAD_X_RATIO = 0.7
+    _HEAD_Y_RATIO = 0.85
+    _SHOULDER_Y_RATIO = 1.15
+    _BOTTOM_Y_RATIO = 3.1
+    _TORSO_HALF_W_RATIO = 1.2
+    _NECK_X_RATIO = 0.8
+    _BOTTOM_X_RATIO = 0.9
+    _SHOULDER_SLOPE_RATIO = 0.35
+    _GATE_HEIGHT_RATIO = 3.2
+    _GATE_MIN_NONZERO_FACE_RATIO = 0.6
+
     def __init__(self, config: Dict, logger: logging.Logger, detector: FaceDetector | None = None) -> None:
         self.logger = logger
         self.mode_cfg = config.get("two_person_contour_mode", {})
@@ -215,7 +226,7 @@ class TwoPersonContourProcessor:
         cv2.ellipse(
             prior,
             (cx, y + h // 2),
-            (max(4, int(0.7 * w)), max(4, int(0.85 * h))),
+            (max(4, int(self._HEAD_X_RATIO * w)), max(4, int(self._HEAD_Y_RATIO * h))),
             0,
             0,
             360,
@@ -223,17 +234,17 @@ class TwoPersonContourProcessor:
             -1,
         )
 
-        shoulder_y = min(roi_h - 1, y + int(1.15 * h))
-        bottom_y = min(roi_h - 1, y + int(3.1 * h))
-        torso_half_w = max(8, int(1.2 * w))
+        shoulder_y = min(roi_h - 1, y + int(self._SHOULDER_Y_RATIO * h))
+        bottom_y = min(roi_h - 1, y + int(self._BOTTOM_Y_RATIO * h))
+        torso_half_w = max(8, int(self._TORSO_HALF_W_RATIO * w))
         pts = np.array(
             [
-                [max(0, cx - int(0.8 * w)), shoulder_y],
-                [max(0, cx - torso_half_w), min(roi_h - 1, shoulder_y + int(0.35 * h))],
-                [max(0, cx - int(0.9 * torso_half_w)), bottom_y],
-                [min(roi_w - 1, cx + int(0.9 * torso_half_w)), bottom_y],
-                [min(roi_w - 1, cx + torso_half_w), min(roi_h - 1, shoulder_y + int(0.35 * h))],
-                [min(roi_w - 1, cx + int(0.8 * w)), shoulder_y],
+                [max(0, cx - int(self._NECK_X_RATIO * w)), shoulder_y],
+                [max(0, cx - torso_half_w), min(roi_h - 1, shoulder_y + int(self._SHOULDER_SLOPE_RATIO * h))],
+                [max(0, cx - int(self._BOTTOM_X_RATIO * torso_half_w)), bottom_y],
+                [min(roi_w - 1, cx + int(self._BOTTOM_X_RATIO * torso_half_w)), bottom_y],
+                [min(roi_w - 1, cx + torso_half_w), min(roi_h - 1, shoulder_y + int(self._SHOULDER_SLOPE_RATIO * h))],
+                [min(roi_w - 1, cx + int(self._NECK_X_RATIO * w)), shoulder_y],
             ],
             dtype=np.int32,
         )
@@ -245,14 +256,14 @@ class TwoPersonContourProcessor:
         gate_x1 = max(0, x - pad_x)
         gate_x2 = min(roi_w, x + w + pad_x)
         gate_y1 = max(0, y - pad_top)
-        gate_y2 = min(roi_h, y + int(3.2 * h) + pad_bottom)
+        gate_y2 = min(roi_h, y + int(self._GATE_HEIGHT_RATIO * h) + pad_bottom)
         cv2.rectangle(prior, (gate_x1, gate_y1), (max(gate_x1 + 2, gate_x2), max(gate_y1 + 2, gate_y2)), 255, -1)
 
         gated = cv2.bitwise_and(fg_mask, prior)
         # Always preserve the face seed region.
         gated[y : y + h, x : x + w] = cv2.bitwise_or(gated[y : y + h, x : x + w], fg_mask[y : y + h, x : x + w])
 
-        if cv2.countNonZero(gated) >= max(40, int(0.6 * w * h)):
+        if cv2.countNonZero(gated) >= max(40, int(self._GATE_MIN_NONZERO_FACE_RATIO * w * h)):
             return gated
         return fg_mask
 

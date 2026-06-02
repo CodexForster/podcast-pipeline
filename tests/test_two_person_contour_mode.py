@@ -115,4 +115,5 @@ def test_shadow_gate_reduces_far_right_shadow_bleed():
     gated = processor._gate_shadow_bleed(fg, local_face)
     ys, xs = np.where(gated > 0)
     assert xs.size > 0
-    assert int(xs.max()) < 120
+    shadow_gate_limit = local_face[0] + local_face[2] + int(processor.shadow_gate_pad_x_ratio * local_face[2]) + 1
+    assert int(xs.max()) <= shadow_gate_limit
