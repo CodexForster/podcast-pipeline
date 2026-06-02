@@ -36,6 +36,9 @@ class SilhouetteRenderer:
         self.max_roi_height = int(config.get("max_roi_height", 320))
         self.smoothing_eps = float(config.get("smoothing_eps", 0.008))
         self.color = self._color_bgr(config.get("color", {"r": 255, "g": 255, "b": 255}))
+        self.shadow_gate_pad_x_ratio = float(config.get("shadow_gate_pad_x_ratio", 0.7))
+        self.shadow_gate_pad_top_ratio = float(config.get("shadow_gate_pad_top_ratio", 0.2))
+        self.shadow_gate_pad_bottom_ratio = float(config.get("shadow_gate_pad_bottom_ratio", 0.35))
         self.mask_cache: Dict[int, _MaskCache] = {}
 
     @staticmethod
@@ -218,6 +221,7 @@ class SilhouetteRenderer:
         kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5))
         fg_small = cv2.morphologyEx(fg_small, cv2.MORPH_CLOSE, kernel, iterations=2)
         fg_small = cv2.morphologyEx(fg_small, cv2.MORPH_OPEN, kernel, iterations=1)
+        fg_small = self._gate_shadow_bleed(fg_small, (sx, sy, sbw, sbh))
 
         num_labels, labels, stats, _ = cv2.connectedComponentsWithStats(fg_small)
         if num_labels > 1:
@@ -232,3 +236,51 @@ class SilhouetteRenderer:
             return fg
         return fg_small
 
+    def _gate_shadow_bleed(self, fg_mask: np.ndarray, active_bbox: BBox) -> np.ndarray:
+        h, w = fg_mask.shape[:2]
+        x, y, bw, bh = active_bbox
+        cx = x + (bw // 2)
+
+        prior = np.zeros((h, w), dtype=np.uint8)
+        cv2.ellipse(
+            prior,
+            (cx, y + bh // 2),
+            (max(4, int(0.7 * bw)), max(4, int(0.85 * bh))),
+            0,
+            0,
+            360,
+            255,
+            -1,
+        )
+
+        shoulder_y = min(h - 1, y + int(1.15 * bh))
+        bottom_y = min(h - 1, y + int(3.1 * bh))
+        torso_half_w = max(8, int(1.2 * bw))
+        pts = np.array(
+            [
+                [max(0, cx - int(0.8 * bw)), shoulder_y],
+                [max(0, cx - torso_half_w), min(h - 1, shoulder_y + int(0.35 * bh))],
+                [max(0, cx - int(0.9 * torso_half_w)), bottom_y],
+                [min(w - 1, cx + int(0.9 * torso_half_w)), bottom_y],
+                [min(w - 1, cx + torso_half_w), min(h - 1, shoulder_y + int(0.35 * bh))],
+                [min(w - 1, cx + int(0.8 * bw)), shoulder_y],
+            ],
+            dtype=np.int32,
+        )
+        cv2.fillPoly(prior, [pts], 255)
+
+        pad_x = max(2, int(self.shadow_gate_pad_x_ratio * bw))
+        pad_top = max(1, int(self.shadow_gate_pad_top_ratio * bh))
+        pad_bottom = max(1, int(self.shadow_gate_pad_bottom_ratio * bh))
+        gate_x1 = max(0, x - pad_x)
+        gate_x2 = min(w, x + bw + pad_x)
+        gate_y1 = max(0, y - pad_top)
+        gate_y2 = min(h, y + int(3.2 * bh) + pad_bottom)
+        cv2.rectangle(prior, (gate_x1, gate_y1), (max(gate_x1 + 2, gate_x2), max(gate_y1 + 2, gate_y2)), 255, -1)
+
+        gated = cv2.bitwise_and(fg_mask, prior)
+        gated[y : y + bh, x : x + bw] = cv2.bitwise_or(gated[y : y + bh, x : x + bw], fg_mask[y : y + bh, x : x + bw])
+
+        if cv2.countNonZero(gated) >= max(40, int(0.6 * bw * bh)):
+            return gated
+        return fg_mask

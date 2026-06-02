@@ -100,3 +100,19 @@ def test_suppresses_duplicate_face_detections_before_picking_two():
     assert len(result.ordered_faces) == 2
     assert result.ordered_faces[0].bbox == (40, 30, 48, 48)
     assert result.ordered_faces[1].bbox == (190, 35, 50, 50)
+
+
+def test_shadow_gate_reduces_far_right_shadow_bleed():
+    processor = TwoPersonContourProcessor(_cfg(), logging.getLogger("t"), detector=StubDetector([]))
+    local_face = (30, 20, 20, 20)
+
+    fg = np.zeros((120, 160), dtype=np.uint8)
+    # Body-like region near face.
+    fg[20:95, 20:70] = 255
+    # Large shadow connected to the body that should be cropped.
+    fg[35:105, 70:155] = 255
+
+    gated = processor._gate_shadow_bleed(fg, local_face)
+    ys, xs = np.where(gated > 0)
+    assert xs.size > 0
+    assert int(xs.max()) < 120
