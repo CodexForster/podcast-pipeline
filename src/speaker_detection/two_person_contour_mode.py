@@ -92,9 +92,13 @@ class TwoPersonContourProcessor:
                 return True
             sx, sy = self._center(chosen.bbox)
             _, _, sw, sh = chosen.bbox
+            # Use the smallest face dimension across both boxes so near-identical overlapping detections
+            # of the same person are filtered even when one box is slightly larger.
             min_size = max(1.0, float(min(cw, ch, sw, sh)))
             min_dist = self.min_face_center_distance_ratio * min_size
-            if ((cx - sx) ** 2 + (cy - sy) ** 2) < (min_dist**2):
+            dist_sq = ((cx - sx) ** 2) + ((cy - sy) ** 2)
+            min_dist_sq = min_dist**2
+            if dist_sq < min_dist_sq:
                 return True
         return False
 
