@@ -103,3 +103,16 @@ Examples:
 - Lip activity and speaker identification are heuristic and can be affected by occlusion, profile faces, and low light.
 - This code is designed to be extended for later steps (auto-editing, shot selection, timeline generation).
 
+## Single-Image Two-Person Contour Mode
+
+For debugging on one image (two people conversing), run:
+
+```bash
+python -m src.speaker_detection.two_person_contour_mode \
+  --input-image /absolute/path/to/input.jpg \
+  --output-image /absolute/path/to/output.jpg \
+  --config config/config.yaml
+```
+
+Tune behavior in `two_person_contour_mode` inside `config/config.yaml`.
+Set `two_person_contour_mode.enabled: true` to reuse the same contour logic frame-by-frame in the video speaker-detection pipeline.

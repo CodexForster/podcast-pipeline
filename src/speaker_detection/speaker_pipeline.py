@@ -9,6 +9,7 @@ from .activity import ActivityEstimator
 from .face_detection import FaceDetector
 from .silhouette import SilhouetteRenderer
 from .tracking import CentroidTracker, TrackedSpeaker
+from .two_person_contour_mode import TwoPersonContourProcessor
 from utils.frame_enhancer import PodcastFrameEnhancer
 from utils.ffmpeg_utils import mux_audio
 
@@ -23,6 +24,8 @@ class SpeakerDetectionPipeline:
         self.video_cfg = config.get("video", {})
         self.outline_cfg = config.get("speaker_outline", {})
         self.production_edits_cfg = config.get("production_edits", {})
+        self.two_person_cfg = config.get("two_person_contour_mode", {})
+        self.two_person_enabled = bool(self.two_person_cfg.get("enabled", False))
         if not self.toggle_cfg.get("podcast_visual_enhancement", True):
             self.production_edits_cfg = {**self.production_edits_cfg, "enabled": False}
 
@@ -31,6 +34,7 @@ class SpeakerDetectionPipeline:
         self.activity = None
         self.enhancer = PodcastFrameEnhancer(self.production_edits_cfg, self.logger)
         self.silhouette = SilhouetteRenderer(self.outline_cfg, self.logger)
+        self.two_person_processor = TwoPersonContourProcessor(config, logger) if self.two_person_enabled else None
         self._build_components()
 
     def _build_components(self) -> None:
@@ -83,9 +87,12 @@ class SpeakerDetectionPipeline:
                     break
 
                 enhanced = self.enhancer.apply(frame)
-                tracks = self._detect_and_track(enhanced)
-                active_id = self._identify_active(enhanced, tracks)
-                annotated = self._draw(enhanced, tracks, active_id)
+                if self.two_person_processor is not None:
+                    annotated, _ = self.two_person_processor.process_frame(enhanced)
+                else:
+                    tracks = self._detect_and_track(enhanced)
+                    active_id = self._identify_active(enhanced, tracks)
+                    annotated = self._draw(enhanced, tracks, active_id)
                 writer.write(annotated)
                 frame_idx += 1
 
