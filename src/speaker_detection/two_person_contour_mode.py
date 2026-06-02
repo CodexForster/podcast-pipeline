@@ -21,6 +21,17 @@ class TwoPersonResult:
 
 
 class TwoPersonContourProcessor:
+    _HEAD_X_RATIO = 0.7
+    _HEAD_Y_RATIO = 0.85
+    _SHOULDER_Y_RATIO = 1.15
+    _BOTTOM_Y_RATIO = 3.1
+    _TORSO_HALF_W_RATIO = 1.2
+    _NECK_X_RATIO = 0.8
+    _BOTTOM_X_RATIO = 0.9
+    _SHOULDER_SLOPE_RATIO = 0.35
+    _GATE_HEIGHT_RATIO = 3.2
+    _GATE_MIN_NONZERO_FACE_RATIO = 0.6
+
     def __init__(self, config: Dict, logger: logging.Logger, detector: FaceDetector | None = None) -> None:
         self.logger = logger
         self.mode_cfg = config.get("two_person_contour_mode", {})
@@ -40,6 +51,9 @@ class TwoPersonContourProcessor:
         self.fail_on_less_than_two = bool(self.mode_cfg.get("fail_on_less_than_two", True))
         self.duplicate_iou_threshold = float(self.mode_cfg.get("duplicate_iou_threshold", 0.35))
         self.min_face_center_distance_ratio = float(self.mode_cfg.get("min_face_center_distance_ratio", 0.6))
+        self.shadow_gate_pad_x_ratio = float(self.mode_cfg.get("shadow_gate_pad_x_ratio", 0.7))
+        self.shadow_gate_pad_top_ratio = float(self.mode_cfg.get("shadow_gate_pad_top_ratio", 0.2))
+        self.shadow_gate_pad_bottom_ratio = float(self.mode_cfg.get("shadow_gate_pad_bottom_ratio", 0.35))
 
         self.detector = detector or FaceDetector(self.speaker_cfg, logger)
 
@@ -201,7 +215,57 @@ class TwoPersonContourProcessor:
         kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5))
         fg = cv2.morphologyEx(fg, cv2.MORPH_CLOSE, kernel, iterations=2)
         fg = cv2.morphologyEx(fg, cv2.MORPH_OPEN, kernel, iterations=1)
-        return fg
+        return self._gate_shadow_bleed(fg, local_face_bbox)
+
+    def _gate_shadow_bleed(self, fg_mask: np.ndarray, local_face_bbox: BBox) -> np.ndarray:
+        roi_h, roi_w = fg_mask.shape[:2]
+        x, y, w, h = local_face_bbox
+        cx = x + (w // 2)
+
+        prior = np.zeros((roi_h, roi_w), dtype=np.uint8)
+        cv2.ellipse(
+            prior,
+            (cx, y + h // 2),
+            (max(4, int(self._HEAD_X_RATIO * w)), max(4, int(self._HEAD_Y_RATIO * h))),
+            0,
+            0,
+            360,
+            255,
+            -1,
+        )
+
+        shoulder_y = min(roi_h - 1, y + int(self._SHOULDER_Y_RATIO * h))
+        bottom_y = min(roi_h - 1, y + int(self._BOTTOM_Y_RATIO * h))
+        torso_half_w = max(8, int(self._TORSO_HALF_W_RATIO * w))
+        pts = np.array(
+            [
+                [max(0, cx - int(self._NECK_X_RATIO * w)), shoulder_y],
+                [max(0, cx - torso_half_w), min(roi_h - 1, shoulder_y + int(self._SHOULDER_SLOPE_RATIO * h))],
+                [max(0, cx - int(self._BOTTOM_X_RATIO * torso_half_w)), bottom_y],
+                [min(roi_w - 1, cx + int(self._BOTTOM_X_RATIO * torso_half_w)), bottom_y],
+                [min(roi_w - 1, cx + torso_half_w), min(roi_h - 1, shoulder_y + int(self._SHOULDER_SLOPE_RATIO * h))],
+                [min(roi_w - 1, cx + int(self._NECK_X_RATIO * w)), shoulder_y],
+            ],
+            dtype=np.int32,
+        )
+        cv2.fillPoly(prior, [pts], 255)
+
+        pad_x = max(2, int(self.shadow_gate_pad_x_ratio * w))
+        pad_top = max(1, int(self.shadow_gate_pad_top_ratio * h))
+        pad_bottom = max(1, int(self.shadow_gate_pad_bottom_ratio * h))
+        gate_x1 = max(0, x - pad_x)
+        gate_x2 = min(roi_w, x + w + pad_x)
+        gate_y1 = max(0, y - pad_top)
+        gate_y2 = min(roi_h, y + int(self._GATE_HEIGHT_RATIO * h) + pad_bottom)
+        cv2.rectangle(prior, (gate_x1, gate_y1), (max(gate_x1 + 2, gate_x2), max(gate_y1 + 2, gate_y2)), 255, -1)
+
+        gated = cv2.bitwise_and(fg_mask, prior)
+        # Always preserve the face seed region.
+        gated[y : y + h, x : x + w] = cv2.bitwise_or(gated[y : y + h, x : x + w], fg_mask[y : y + h, x : x + w])
+
+        if cv2.countNonZero(gated) >= max(40, int(self._GATE_MIN_NONZERO_FACE_RATIO * w * h)):
+            return gated
+        return fg_mask
 
     def _contour_for_face(self, frame_bgr: np.ndarray, face_bbox: BBox) -> np.ndarray | None:
         ex1, ey1, ex2, ey2 = self._expanded_roi(frame_bgr.shape, face_bbox)
