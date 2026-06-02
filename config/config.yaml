@@ -27,6 +27,8 @@ two_person_contour_mode:
   expand_top: 0.35
   expand_bottom: 3.0
   min_area: 1200
+  duplicate_iou_threshold: 0.35
+  min_face_center_distance_ratio: 0.6
 
 speaker_detection:
     enabled: true
@@ -127,4 +129,3 @@ speaker_outline:
   min_area: 1200
   max_roi_height: 320
   smoothing_eps: 0.008
-

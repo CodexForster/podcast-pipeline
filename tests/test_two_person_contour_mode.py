@@ -85,3 +85,18 @@ def test_draws_two_contours_for_two_faces():
 
     assert len(result.contours) == 2
     assert rendered.sum() > 0
+
+
+def test_suppresses_duplicate_face_detections_before_picking_two():
+    detections = [
+        FaceDetection((40, 30, 48, 48), 0.95),
+        FaceDetection((42, 32, 47, 47), 0.94),  # overlapping duplicate of same person
+        FaceDetection((190, 35, 50, 50), 0.90),  # second person
+    ]
+    processor = TwoPersonContourProcessor(_cfg(), logging.getLogger("t"), detector=StubDetector(detections))
+
+    _, result = processor.process_frame(np.zeros((260, 360, 3), dtype=np.uint8))
+
+    assert len(result.ordered_faces) == 2
+    assert result.ordered_faces[0].bbox == (40, 30, 48, 48)
+    assert result.ordered_faces[1].bbox == (190, 35, 50, 50)

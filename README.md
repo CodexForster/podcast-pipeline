@@ -116,3 +116,4 @@ python -m src.speaker_detection.two_person_contour_mode \
 
 Tune behavior in `two_person_contour_mode` inside `config/config.yaml`.
 Set `two_person_contour_mode.enabled: true` to reuse the same contour logic frame-by-frame in the video speaker-detection pipeline.
+If duplicate detections on one person cause unstable contours, tune `duplicate_iou_threshold` and `min_face_center_distance_ratio`.

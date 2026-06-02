@@ -38,6 +38,8 @@ class TwoPersonContourProcessor:
         self.expand_bottom = float(self.mode_cfg.get("expand_bottom", 3.0))
         self.min_area = int(self.mode_cfg.get("min_area", 1200))
         self.fail_on_less_than_two = bool(self.mode_cfg.get("fail_on_less_than_two", True))
+        self.duplicate_iou_threshold = float(self.mode_cfg.get("duplicate_iou_threshold", 0.35))
+        self.min_face_center_distance_ratio = float(self.mode_cfg.get("min_face_center_distance_ratio", 0.6))
 
         self.detector = detector or FaceDetector(self.speaker_cfg, logger)
 
@@ -59,9 +61,52 @@ class TwoPersonContourProcessor:
         _, _, w, h = det.bbox
         return float(det.confidence) * float(w * h)
 
+    @staticmethod
+    def _center(bbox: BBox) -> Tuple[float, float]:
+        x, y, w, h = bbox
+        return x + (w / 2.0), y + (h / 2.0)
+
+    @staticmethod
+    def _iou(a: BBox, b: BBox) -> float:
+        ax, ay, aw, ah = a
+        bx, by, bw, bh = b
+        ax2, ay2 = ax + aw, ay + ah
+        bx2, by2 = bx + bw, by + bh
+        inter_x1 = max(ax, bx)
+        inter_y1 = max(ay, by)
+        inter_x2 = min(ax2, bx2)
+        inter_y2 = min(ay2, by2)
+        if inter_x2 <= inter_x1 or inter_y2 <= inter_y1:
+            return 0.0
+        inter = float((inter_x2 - inter_x1) * (inter_y2 - inter_y1))
+        union = float((aw * ah) + (bw * bh)) - inter
+        if union <= 0:
+            return 0.0
+        return inter / union
+
+    def _is_duplicate_face(self, candidate: FaceDetection, picked: List[FaceDetection]) -> bool:
+        cx, cy = self._center(candidate.bbox)
+        _, _, cw, ch = candidate.bbox
+        for chosen in picked:
+            if self._iou(candidate.bbox, chosen.bbox) >= self.duplicate_iou_threshold:
+                return True
+            sx, sy = self._center(chosen.bbox)
+            _, _, sw, sh = chosen.bbox
+            min_size = max(1.0, float(min(cw, ch, sw, sh)))
+            min_dist = self.min_face_center_distance_ratio * min_size
+            if ((cx - sx) ** 2 + (cy - sy) ** 2) < (min_dist**2):
+                return True
+        return False
+
     def _pick_two_faces(self, detections: Iterable[FaceDetection]) -> List[FaceDetection]:
         ranked = sorted(detections, key=self._score, reverse=True)
-        picked = ranked[:2]
+        picked: List[FaceDetection] = []
+        for det in ranked:
+            if self._is_duplicate_face(det, picked):
+                continue
+            picked.append(det)
+            if len(picked) == 2:
+                break
         return sorted(picked, key=lambda d: self._center_x(d.bbox))
 
     def _expanded_roi(self, frame_shape: Tuple[int, int, int], face_bbox: BBox) -> Tuple[int, int, int, int]:
@@ -169,8 +214,11 @@ class TwoPersonContourProcessor:
 
         contours, _ = cv2.findContours(fg_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
         if contours:
-            contour = max(contours, key=cv2.contourArea)
-            if cv2.contourArea(contour) >= self.min_area:
+            valid = [c for c in contours if cv2.contourArea(c) >= self.min_area]
+            if valid:
+                face_center = (float(lx + (lw / 2.0)), float(ly + (lh / 2.0)))
+                anchored = [c for c in valid if cv2.pointPolygonTest(c, face_center, False) >= 0]
+                contour = max(anchored if anchored else valid, key=cv2.contourArea)
                 return contour + np.array([[[ex1, ey1]]], dtype=np.int32)
 
         return self._fallback_contour(frame_bgr.shape, face_bbox)
